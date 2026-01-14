@@ -26,10 +26,15 @@ const author = SITE.author;
 const canonical = Astro.url.href;
 const ogTitle = OG.title;
 const ogDescription = OG.description;
+// OG image dimensions per Open Graph protocol recommendations
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 600;
+const APPLE_TOUCH_ICON_SIZE = 180;
+
 const socialImageRes = await getImage({
   src: OG.image,
-  width: 1200,
-  height: 600,
+  width: OG_IMAGE_WIDTH,
+  height: OG_IMAGE_HEIGHT,
 });
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
@@ -63,8 +68,8 @@ const faviconSvg = await getImage({
 
 const appleTouchIcon = await getImage({
   src: faviconSrc,
-  width: 180,
-  height: 180,
+  width: APPLE_TOUCH_ICON_SIZE,
+  height: APPLE_TOUCH_ICON_SIZE,
   format: "png",
 });
 ---

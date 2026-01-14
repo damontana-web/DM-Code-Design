@@ -75,7 +75,6 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    cacheDir: 'C:/temp/vite-cache',
   },
   experimental: {
     clientPrerender: true,

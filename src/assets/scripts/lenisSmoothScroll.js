@@ -5,7 +5,7 @@ import Lenis from "lenis";
 // Script to handle Lenis library settings for smooth scrolling
 // https://github.com/darkroomengineering/lenis
 const lenis = new Lenis({
-    autoRaf: true,
+  autoRaf: true,
 });
 
 // Make sure to use lenis somewhere in the code
