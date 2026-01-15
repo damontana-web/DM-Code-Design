@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Icon from "../icons/Icon.astro";
 import { servicesData, successStoriesData } from "@data/mega_link";
+const stickyStory = successStoriesData?.[0];
 ---
 
 <div
@@ -68,20 +69,20 @@ import { servicesData, successStoriesData } from "@data/mega_link";
           >Success Stories</span
         >
         {
-          successStoriesData && successStoriesData.length > 0 && (
+          stickyStory && (
             <a
               class="group mt-2 flex items-center gap-x-5 rounded-xl p-3 hover:bg-neutral-100 dark:hover:bg-neutral-500/10"
-              href={successStoriesData[0].learnMoreUrl}
+              href={stickyStory.learnMoreUrl}
             >
               <Image
-                src={successStoriesData[0].image}
+                src={stickyStory.image}
                 inferSize={true}
-                alt={successStoriesData[0].alt}
+                alt={stickyStory.alt}
                 class="size-32 rounded-lg"
               />
               <div class="grow">
                 <p class="text-sm text-neutral-800 dark:text-neutral-400">
-                  {successStoriesData[0].description}
+                  {stickyStory.description}
                 </p>
                 <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-medium text-orange-400 decoration-2 hover:underline dark:text-orange-300">
                   Learn more
