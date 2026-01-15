@@ -25,6 +25,9 @@ export default {
         },
         'blue-primary': '#1A468E',  // For pill highlights
         navy: { 500: '#1e3a8a' },
+        orange: {
+          400: '#D81B60',  // Updated to magenta
+        },
       },
     },
   },
