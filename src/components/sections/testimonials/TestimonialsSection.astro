@@ -1,6 +1,5 @@
 ---
 import TestimonialItem from "./TestimonialItem.astro";
-import StatsGrid from "../../ui/blocks/StatsGrid.astro";
 
 const {
   title,
@@ -32,7 +31,7 @@ type StatProps = {
 ---
 
 <section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto max-w-[85rem] px-4 py-30 sm:px-6 lg:px-8 2xl:max-w-full"
 >
   <!-- Container for the testimonials -->
   <div
@@ -40,7 +39,7 @@ type StatProps = {
   >
     <div class="lg:col-span-5 lg:col-start-1">
       <!-- Title and Subtitle -->
-      <div class="mb-8">
+      <div class="mb-8 text-center lg:text-left">
         <h2
           class="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
         >
@@ -64,12 +63,20 @@ type StatProps = {
     <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
       <div class="space-y-6 sm:space-y-8">
         <ul
-          class="grid grid-cols-2 divide-x-2 divide-y-2 divide-neutral-300 overflow-hidden dark:divide-neutral-700"
+          class="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           <!-- Generate a list item for each stat in the statistics array by mapping over the array. -->
           {
             statistics.map((stat, index) => (
-            <StatsGrid count={stat.count} description={stat.description} index={index}/>
+            <li class="flex flex-col p-6 bg-white dark:bg-neutral-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-magenta-500/5 dark:hover:from-neutral-800 dark:hover:to-magenta-500/10">
+              <div class="mb-2 flex items-end gap-x-2 text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+                {index === 1 || index === 2 ? <span class="text-magenta-500"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></span> : null}
+                {stat.count}
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                {stat.description}
+              </p>
+            </li>
             ))
           }
         </ul>
