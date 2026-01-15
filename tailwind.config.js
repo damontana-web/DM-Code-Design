@@ -23,6 +23,7 @@ export default {
         blue: {
           primary: '#1A468E',  // Brand Blue
         },
+        'blue-primary': '#1A468E',  // For pill highlights
         navy: { 500: '#1e3a8a' },
       },
     },

@@ -33,25 +33,26 @@ type StatProps = {
 <section
   class="mx-auto max-w-[85rem] px-4 py-30 sm:px-6 lg:px-8 2xl:max-w-full"
 >
-  <!-- Container for the testimonials -->
-  <div
-    class="lg:grid lg:grid-cols-12 lg:items-center lg:justify-between lg:gap-16"
-  >
-    <div class="lg:col-span-5 lg:col-start-1">
-      <!-- Title and Subtitle -->
-      <div class="mb-8 text-center lg:text-left">
-        <h2
-          class="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
-        >
-          {title}
-        </h2>
-        {subTitle &&
-        <p class="text-neutral-600 dark:text-neutral-400">
-          {subTitle}
-        </p>
-      }
-      </div>
+  <!-- Title and Subtitle - Full Width -->
+  <div class="mb-12 text-center">
+    <h2
+      class="mb-4 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
+    >
+      {title}
+    </h2>
+    {subTitle &&
+    <p class="mx-auto max-w-3xl text-neutral-600 dark:text-neutral-400">
+      {subTitle}
+    </p>
+  }
+  </div>
 
+  <!-- Container for the testimonials and cards in 12-column grid -->
+  <div
+    class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16"
+  >
+    <!-- Testimonials Column -->
+    <div class="lg:col-span-5">
       <!-- Generate a blockquote for each testimonial in the testimonials array by mapping over the array. -->
       { testimonials &&
         testimonials.map((testimonial) => (
@@ -59,8 +60,10 @@ type StatProps = {
         ))
       }
     </div>
+
+    <!-- Statistics Cards - 4 Column Grid -->
 { statistics &&
-    <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
+    <div class="mt-10 lg:col-span-7 lg:mt-0">
       <div class="space-y-6 sm:space-y-8">
         <ul
           class="grid grid-cols-2 md:grid-cols-4 gap-4"
