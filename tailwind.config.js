@@ -6,6 +6,12 @@ export default {
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
     './node_modules/preline/**/*.js'
   ],
+  safelist: [
+    'bg-magenta-500/[0.1]',
+    'bg-magenta-500/[0.2]',
+    'bg-blue-primary/[0.1]',
+    'bg-blue-primary/[0.2]',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -18,7 +24,11 @@ export default {
           600: '#2A3A8F',  // Darker shade for hover states
         },
         magenta: {
-          500: '#D81B60',  // Brand Magenta
+          200: '#f8b8d9',  // Light shade
+          300: '#f38cc7',  // Lighter shade
+          400: '#EA2295',  // Primary magenta (replaces orange-400)
+          500: '#EA2295',  // Primary magenta (replaces orange-500)
+          600: '#c41d7a',  // Darker shade
         },
         blue: {
           primary: '#1A468E',  // Brand Blue

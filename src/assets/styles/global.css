@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/public/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+/* ...existing code... */
 @import "preline/variants.css";
 @import "tailwindcss";
 
@@ -58,6 +64,12 @@
   --color-orange-800: oklch(0.47 0.157 37.304);
   --color-orange-900: oklch(0.408 0.123 38.172);
   --color-orange-950: oklch(0.266 0.079 36.259);
+
+  --color-magenta-200: oklch(0.85 0.15 340);
+  --color-magenta-300: oklch(0.75 0.18 340);
+  --color-magenta-400: #EA2295;
+  --color-magenta-500: #EA2295;
+  --color-magenta-600: oklch(0.55 0.20 340);
 
   --color-yellow-50: oklch(0.987 0.026 102.212);
   --color-yellow-100: oklch(0.973 0.071 103.193);
