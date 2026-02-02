@@ -31,9 +31,9 @@ export default {
           600: '#c41d7a',  // Darker shade
         },
         blue: {
-          primary: '#1A468E',  // Brand Blue
+          primary: '#2198F9',  // Brand Blue
         },
-        'blue-primary': '#1A468E',  // For pill highlights
+        'blue-primary': '#2198F9',  // For pill highlights
         navy: { 500: '#1e3a8a' },
         orange: {
           400: '#D81B60',  // Updated to magenta
