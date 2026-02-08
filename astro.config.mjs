@@ -12,7 +12,7 @@ export default defineConfig({
   image: {
     domains: ["images.unsplash.com"],
   },
-  prefetch: true,
+  prefetch: false,
   integrations: [
     sitemap(),
     starlight({
