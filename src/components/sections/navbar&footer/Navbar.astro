@@ -93,125 +93,14 @@ interface NavLink {
     </div>
   </nav>
 </header>
-<!-- Theme Appearance script to manage light/dark modes -->
 <script is:inline>
-  const HSThemeAppearance = {
-    init() {
-      const defaultTheme = "default";
-      let theme;
-      
-      try {
-        theme = localStorage.getItem("hs_theme") || defaultTheme;
-      } catch (error) {
-        theme = defaultTheme;
-      }
-
-      const htmlElement = document.querySelector("html");
-      if (!htmlElement) return;
-      
-      if (htmlElement.classList.contains("dark")) return;
-      this.setAppearance(theme);
-    },
-    _resetStylesOnLoad() {
-      const resetStylesElement = document.createElement("style");
-      resetStylesElement.innerText = `*{transition: unset !important;}`;
-      resetStylesElement.setAttribute("data-hs-appearance-onload-styles", "");
-      document.head.appendChild(resetStylesElement);
-      return resetStylesElement;
-    },
-    setAppearance(theme, saveInStore = true, dispatchEvent = true) {
-      const resetStylesEl = this._resetStylesOnLoad();
-      const htmlElement = document.querySelector("html");
-      
-      if (!htmlElement) return;
-
-      if (saveInStore) {
-        try {
-          localStorage.setItem("hs_theme", theme);
-        } catch (error) {
-          console.warn("Could not save theme preference:", error);
-        }
-      }
-
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
-
-      htmlElement.classList.remove("dark", "default", "auto");
-      htmlElement.classList.add(this.getOriginalAppearance());
-
-      setTimeout(() => {
-        resetStylesEl.remove();
-      });
-
-      if (dispatchEvent) {
-        window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme }),
-        );
-      }
-    },
-    getAppearance() {
-      let theme = this.getOriginalAppearance();
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
-      return theme;
-    },
-    getOriginalAppearance() {
-      const defaultTheme = "default";
-      try {
-        return localStorage.getItem("hs_theme") || defaultTheme;
-      } catch (error) {
-        return defaultTheme;
-      }
-    },
-  };
-  HSThemeAppearance.init();
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      if (HSThemeAppearance.getOriginalAppearance() === "auto") {
-        HSThemeAppearance.setAppearance("auto", false);
-      }
-    });
+  // Force light mode: clear any previously stored theme and strip the dark class.
+  try {
+    localStorage.removeItem("hs_theme");
+  } catch (error) {}
+  document.documentElement.classList.remove("dark", "auto");
 
   window.addEventListener("load", () => {
-    const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]",
-    );
-    const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]",
-    );
-
-    $clickableThemes.forEach(($item) => {
-      $item.addEventListener("click", () =>
-        HSThemeAppearance.setAppearance(
-          $item.getAttribute("data-hs-theme-click-value"),
-          true,
-          $item,
-        ),
-      );
-    });
-
-    $switchableThemes.forEach(($item) => {
-      $item.addEventListener("change", (e) => {
-        HSThemeAppearance.setAppearance(e.target.checked ? "dark" : "default");
-      });
-
-      $item.checked = HSThemeAppearance.getAppearance() === "dark";
-    });
-
-    window.addEventListener("on-hs-appearance-change", (e) => {
-      $switchableThemes.forEach(($item) => {
-        $item.checked = e.detail === "dark";
-      });
-    });
-
     // Update aria-expanded for mobile menu toggle
     const mobileMenuToggle = document.querySelector('.hs-collapse-toggle');
     if (mobileMenuToggle) {
