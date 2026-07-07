@@ -4,7 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
-import ProcessSteps from "@components/sections/features/ProcessSteps.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import RecentWork from "@components/sections/work/RecentWork.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
@@ -13,7 +13,9 @@ import heroImage from "@images/HeroImage.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
+import personWorking from "@images/person-working.avif";
+import dashboard from "@images/dashboard-image.avif";
+import progressBuilding from "@images/progress-building.avif";
 ---
 
 <MainLayout>
@@ -37,29 +39,37 @@ import featureImage from "@images/features-image.avif";
   <FeaturesGeneral
     title="What I Do"
     subTitle="I take care of both design and development personally. There's no handover between teams, so what you approve in the design is exactly what gets built."
-    src={featureImage}
-    alt="DaMontana Code + Design products in floating boxes"
     features={features}
   />
 
-  <ProcessSteps
+  <FeaturesNavs
     title="How I work"
-    subTitle="I've spent years working alongside digital agencies as an external designer and developer, so I run a proper process — clear scope, honest timelines, no surprises. But most of my direct clients aren't web people, and they shouldn't have to be. My job is to ask the right questions and explain everything in plain English."
-    steps={[
+    tabs={[
       {
         heading: "We start with a conversation",
         content:
           "Book a call and tell me about your business — what's working, what isn't, and what you're trying to achieve. I'll give you my honest read on what I'd do, how long it would take, and roughly what it would cost. No obligation either way.",
+        svg: "chatBubble",
+        src: personWorking,
+        alt: "Photo representing an initial conversation about a project",
+        first: true,
       },
       {
         heading: "Design first, then build",
         content:
           "You approve the design before I write a line of code, and you review the full site before it goes live. Feedback and changes are built into the process — that's what the review stages are for.",
+        svg: "dashboard",
+        src: dashboard,
+        alt: "Screen mockup representing the design and build process",
+        second: true,
       },
       {
         heading: "Launch and ongoing support",
         content:
           "I handle the launch, walk you through managing the basics yourself, and remain available afterwards. Websites need occasional attention — I don't hand over and disappear.",
+        svg: "rocket",
+        src: progressBuilding,
+        alt: "Photo representing ongoing project support after launch",
       },
     ]}
   />
@@ -68,7 +78,7 @@ import featureImage from "@images/features-image.avif";
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Questions I get a lot" faqs={faqs} />
+  <FAQ title="Common Questions" faqs={faqs} />
 
   <HeroSectionAlt
     title="Got a project in mind?"
