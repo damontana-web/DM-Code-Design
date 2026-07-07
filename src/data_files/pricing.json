@@ -3,34 +3,36 @@
   "thirdOption": "Not sure what you need? Let’s figure it out",
   "btnText": "Get in Touch",
 
-  "starterKit": {
-    "name": "Ongoing Support",
-    "description": "For teams who need a plug-in creative/dev partner",
-    "features": [
-      "Monthly retainer",
-      "Quick turnarounds",
-      "Great for design systems, tweaks, or dev-ready UIs"
-    ]
-  },
-
-  "professionalToolbox": {
-    "name": "Project-Based",
-    "description": "Great for full designs, landing pages, or specific feature builds",
-    "features": [
-      "One-time scope",
-      "Timeline + milestones",
-      "Figma-to-code, full-stack handoff",
-      "Ideal for agencies with overflow work"
-    ]
-  },
-
-  "_notes": {
-    "subTitle": "Boost efficiency with ScrewFast's clear, value-driven plans.",
-    "badge": "Best value",
-    "purchaseBtnTitle": "Get the Professional Toolbox",
-    "purchaseLink": "#",
-    "price": "89",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly"
-  }
+  "plans": [
+    {
+      "name": "One project, start to finish",
+      "description": "A new website, a rebrand, a landing page — scoped, quoted, and delivered.",
+      "features": [
+        "Fixed scope and price, agreed up front",
+        "Clear timeline with review points along the way",
+        "You own everything at the end",
+        "Good fit if you know roughly what you need"
+      ]
+    },
+    {
+      "name": "Ongoing design + development",
+      "description": "A monthly arrangement for businesses that need regular design and dev work without hiring in-house.",
+      "features": [
+        "Set monthly retainer, no lock-in contracts",
+        "Updates, new pages, and improvements without quoting each one separately",
+        "I build up knowledge of your business, so turnaround gets faster over time",
+        "Good fit if your website is never really finished"
+      ]
+    },
+    {
+      "name": "Agency + studio support",
+      "description": "White-label design and front-end development for creative and digital agencies.",
+      "features": [
+        "Experienced as an embedded external team member",
+        "Figma-to-code, full-stack handoff, or overflow capacity",
+        "Comfortable in your workflow, your tools, and your client deadlines",
+        "Good fit if you need reliable hands without growing headcount"
+      ]
+    }
+  ]
 }

@@ -3,10 +3,9 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
-import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import ProcessSteps from "@components/sections/features/ProcessSteps.astro";
+import RecentWork from "@components/sections/work/RecentWork.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
@@ -15,17 +14,6 @@ import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
-import { partnersData } from "@/data_files/constants";
-
-const avatarSrcs: Array<string> = [
-  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-];
 ---
 
 <MainLayout>
@@ -36,112 +24,56 @@ const avatarSrcs: Array<string> = [
   />
 
   <HeroSection
-    title=`Human‑Centred Designer <span class="inline-flex items-center justify-center w-[1.2em] h-[1.2em] rounded-full bg-magenta-500/[0.1] text-magenta-500 dark:bg-magenta-500/[0.2] leading-none">+</span><span class="inline-block px-4 py-1 rounded-full bg-blue-primary/[0.1] text-blue-primary dark:bg-blue-primary/[0.2]">Code</span> <span
-        class="text-magenta-500 dark:text-magenta-400">Developer</span>`
-    subTitle="Hi, I'm David Montana – a Melbourne-based UI/UX designer and front-end developer specializing in digital solutions for healthcare providers, clinics, and medical practices."
-    primaryBtn="Let's Talk About Your Project"
+    title=`<span class="text-magenta-500">{Design}</span> that hits your audience. + Clean <span class="text-blue-primary">{Code}</span> that just works.`
+    subTitle="Hi, I'm David Montana, a Melbourne designer and developer. For the past 12 years, I've built websites for real estate agencies, healthcare providers, and local businesses across Australia."
+    primaryBtn="Tell me about your project"
     primaryBtnURL="/contact"
-    secondaryBtn="View Portfolio"
+    secondaryBtn="See my work"
     secondaryBtnURL="/products"
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
     src={heroImage}
     alt="David Montana - UX/UI Designer and Front-end Developer"
   />
 
-  <ClientsSection
-    title="Trusted by Digital Teams"
-    subTitle="Helping agencies and in-house teams deliver pixel-perfect work, faster."
-    partners={partnersData}
-  />
-
   <FeaturesGeneral
     title="What I Do"
-    subTitle=`<span
-        class="text-magenta-500 dark:text-magenta-400">Modern solutions for digital teams</span> I offer pixel-perfect design and code with minimal handoff friction. Whether you need a creative problem-solver or an extra pair of hands, I integrate smoothly into your workflow.`
+    subTitle="I take care of both design and development personally. There's no handover between teams, so what you approve in the design is exactly what gets built."
     src={featureImage}
     alt="DaMontana Code + Design products in floating boxes"
     features={features}
   />
 
-  <FeaturesNavs
-    title=`<span class="text-blue-500 dark:text-blue-400">Streamlined</span> approach to perfectly suit your hardware and construction needs.`
-    tabs={[
+  <ProcessSteps
+    title="How I work"
+    subTitle="I've spent years working alongside digital agencies as an external designer and developer, so I run a proper process — clear scope, honest timelines, no surprises. But most of my direct clients aren't web people, and they shouldn't have to be. My job is to ask the right questions and explain everything in plain English."
+    steps={[
       {
-        heading: "My Approach",
+        heading: "We start with a conversation",
         content:
-          "I work best as a remote design/dev extension of your in-house team. I adapt fast, think independently, and keep communication clear and proactive.",
-        svg: "tools",
-        src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
-        first: true,
+          "Book a call and tell me about your business — what's working, what isn't, and what you're trying to achieve. I'll give you my honest read on what I'd do, how long it would take, and roughly what it would cost. No obligation either way.",
       },
       {
-        heading: "Design/Dev",
+        heading: "Design first, then build",
         content:
-          "a designer–developer hybrid you can trust to jump in, get aligned, and deliver.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
-        second: true,
+          "You approve the design before I write a line of code, and you review the full site before it goes live. Feedback and changes are built into the process — that's what the review stages are for.",
       },
       {
-        heading: "Deploy",
+        heading: "Launch and ongoing support",
         content:
-          "Delivered in your stack or launched by me.",
-        svg: "house",
-        src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+          "I handle the launch, walk you through managing the basics yourself, and remain available afterwards. Websites need occasional attention — I don't hand over and disappear.",
       },
     ]}
   />
 
-  <TestimonialsSection
-    title="Why Teams Bring Me In"
-    subTitle="At DaMontana Code + Design, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-    testimonials={[
-      {
-        content:
-          "DM dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "10+",
-        description:
-          "customers equipped — from DIY to major construction firms",
-      },
-      {
-        count: "1 person worflow",
-        description:
-          "fewer handoffs, faster feedback loops",
-      },
-      {
-        count: "15.3%",
-        description:
-          "Figma to Code Expert – efficient at bringing UI kits to life with Astro, Hugo, Next.js",
-      },
-      {
-        count: "Modern",
-        description: "WordPress & Jamstack flexibility – choose what fits the project best",
-      },
-    ]}
-  />
+  <RecentWork title="Recent Work" viewAllUrl="/products" />
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Questions I get a lot" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="DaMontana Code + Design is built with modern web technologies: Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="Got a project in mind?"
+    subTitle="Or even just a rough idea. Send me a message and I'll tell you what I'd do with it — no obligation, no hard sell."
+    btnTitle="Send me a message"
+    url="/contact"
   />
 </MainLayout>

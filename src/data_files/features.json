@@ -1,22 +1,22 @@
 [
   {
-    "heading": "UX/UI Design + Front-end Development",
-    "content": "From wireframes to deployed interfaces—one person, one process.",
+    "heading": "Design + build",
+    "content": "Your website designed and coded by the same person. I design in Figma first — you'll see exactly what you're getting, and can click through a working prototype before I build anything. Then I code it on whatever suits your business best: WordPress if you want to manage content yourself, or a modern lightweight setup if speed and low maintenance matter more.",
     "svg": "groups"
   },
   {
-    "heading": "Brand + Identity Systems",
-    "content": "Logo and design systems that scale across web, print, and social.",
+    "heading": "Branding that carries across",
+    "content": "Logo, colours, and a look that works everywhere — your website, your socials, your signage, your invoices.",
     "svg": "verified"
   },
   {
-    "heading": "Creative Direction Support",
-    "content": "Ideation, prototyping, and fast turnaround visuals for pitch decks or MVPs.",
+    "heading": "Quick visuals when you need them",
+    "content": "Mockups and clickable prototypes, turned around fast. Handy when you're pitching something new, testing an idea before committing to it, or need a change before Friday.",
     "svg": "books"
   },
   {
-    "heading": "Component-based Design Systems",
-    "content": "Figma-to-code asset production for teams needing consistent, scalable UI.",
+    "heading": "Fixing and improving existing sites",
+    "content": "Not everything needs a rebuild. Whether it's a WordPress site that's gotten slow or a design that's showing its age, I'll tell you honestly if it needs a refresh or a restart.",
     "svg": "frame"
   }
 ]

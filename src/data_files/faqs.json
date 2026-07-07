@@ -1,17 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Straight answers. If yours isn't here, just ask.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "How much does a website cost?",
+      "answer": "It depends on what you need, but I'll always give you a fixed quote before we start — no hourly surprises. As a rough guide: a simple site for a small business usually lands between $[X] and $[X], and larger builds go from there. If your budget's tight, tell me — there's usually a smart way to stage things."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "How long does it take?",
+      "answer": "Most small business sites take [X–X] weeks from our first chat to going live. The biggest variable is usually content — if you've got your text and photos ready, things move fast."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "Can you fix my existing site, or do you only build new ones?",
+      "answer": "Both. Sometimes a site just needs a tidy-up and a speed boost, not a rebuild. I'll take a look and tell you honestly which one you need — even if the answer is \"the cheap option.\""
+    },
+    {
+      "question": "Do you handle hosting, domains, and email?",
+      "answer": "Yes. I can set all of it up, or work with whatever you've already got. Either way, everything stays in your name and under your control — you're never locked in to me."
+    },
+    {
+      "question": "What happens after the site goes live?",
+      "answer": "I don't vanish. Every project includes [X weeks] of post-launch support for anything that pops up, and I'll show you how to make simple updates yourself. If you'd rather not touch it at all, that's what the retainer option is for."
+    },
+    {
+      "question": "I'm not technical. Is that a problem?",
+      "answer": "Not even slightly — most of my clients aren't. You explain your business; I handle the web stuff and explain it back in plain English."
     }
   ]
 }

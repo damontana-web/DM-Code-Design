@@ -1,0 +1,67 @@
+---
+// A row of recent project cards, pulled straight from the Products collection.
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const { title, subTitle, viewAllUrl } = Astro.props;
+
+interface Props {
+  title?: string;
+  subTitle?: string;
+  viewAllUrl?: string;
+}
+
+const projects: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) => id.startsWith("en/"))
+)
+  .sort(
+    (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+      a.data.main.id - b.data.main.id,
+  )
+  .slice(0, 3);
+---
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-30 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+  <div class="mb-6 flex items-end justify-between gap-8 sm:mb-8 md:mb-12">
+    <div class="max-w-2xl">
+      <h2 class="text-balance text-2xl text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+        {title}
+      </h2>
+      {
+        subTitle && (
+          <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+            {subTitle}
+          </p>
+        )
+      }
+    </div>
+    {
+      viewAllUrl && (
+        <a
+          class="hidden shrink-0 whitespace-nowrap text-sm font-bold text-neutral-800 underline underline-offset-4 hover:no-underline dark:text-neutral-200 sm:inline-block"
+          href={viewAllUrl}
+        >
+          View all work
+        </a>
+      )
+    }
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+    {projects.map((project) => <CardSmall product={project} />)}
+  </div>
+
+  {
+    viewAllUrl && (
+      <a
+        class="mt-6 inline-block text-sm font-bold text-neutral-800 underline underline-offset-4 hover:no-underline dark:text-neutral-200 sm:hidden"
+        href={viewAllUrl}
+      >
+        View all work
+      </a>
+    )
+  }
+</section>
