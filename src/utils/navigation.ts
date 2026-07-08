@@ -1,6 +1,6 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/" },
+  { name: "About", url: "/about" },
   { name: "Portfolio", url: "/products" },
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
@@ -20,7 +20,7 @@ const footerLinks = [
     section: "Get in touch",
     links: [
       { name: "Contact", url: "/contact" },
-      { name: "About", url: "#" },
+      { name: "About", url: "/about" },
     ],
   },
 ];
@@ -30,6 +30,7 @@ const socialLinks = {
   instagram: "https://www.instagram.com/damontana.ideas",
   dribbble: "https://dribbble.com/damontana",
   linkedin: "https://www.linkedin.com/in/damontana/",
+  github: "https://github.com/damontana-web",
 };
 
 export default {

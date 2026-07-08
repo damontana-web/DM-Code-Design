@@ -1,0 +1,156 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import Icon from "@components/ui/icons/Icon.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = "About | DaMontana Design + Code, Melbourne";
+const pageDescription: string =
+  "Designer and developer with agency roots — Young & Rubicam, Cannes Lions — now building websites for small businesses across Australia.";
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}/about`,
+    "url": `${SITE.url}/about`,
+    "name": pageTitle,
+    "description": pageDescription,
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": SITE.url,
+      "name": SITE.title,
+      "description": SITE.description,
+    },
+    "inLanguage": "en-US",
+  }}
+>
+  <!-- Hero -->
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1
+        class="text-balance text-2xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        About
+      </h1>
+      <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
+        I'm David Montana — a designer and developer in Melbourne. I've spent
+        15 years building websites and brands, first inside big agencies,
+        then independently as DaMontana. Here's the short version of how I
+        got here and how I work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Narrative sections -->
+  <section class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
+    <div class="mx-auto max-w-3xl space-y-12">
+      <div>
+        <h2 class="text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl">
+          Trained as a designer first
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          I studied Graphic Design, specialising in illustration and digital
+          marketing — which is a long way of saying I learned to think about
+          how things look, how they persuade, and how they work, all at once.
+          The code came later, and it came from necessity: I kept designing
+          things and wanting them built properly.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl">
+          The agency years
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          Early in my career I worked inside advertising and creative
+          agencies, including Young &amp; Rubicam — one of the biggest names
+          in the industry. Agency work teaches you two things fast: how to
+          deliver at a professional standard under real deadlines, and how
+          big-brand thinking actually works. Along the way, my work picked up
+          awards at Cannes Lions (Young Lions competition) and FIAP, the
+          Ibero-American advertising festival.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl">
+          Then I went out on my own
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          For the past 15 years I've worked independently as DaMontana,
+          mostly with small and medium businesses — real estate agencies,
+          clinics, suppliers, local companies. It turns out the thing I like
+          most isn't big-brand campaigns. It's taking that agency-level
+          standard and applying it where it's rare: businesses that usually
+          can't get it without paying agency prices or dealing with agency
+          layers.
+        </p>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          I still work with agencies too — as an external designer and
+          developer when their workload spikes — so I keep a foot in both
+          worlds. Your project gets the discipline of one and the
+          directness of the other.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl">
+          What that means for you
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          Everything on this site comes from those years: design in Figma
+          first so you see it before it's built, code it myself so nothing
+          gets lost in handover, explain everything in plain English because
+          most of my clients aren't web people — and shouldn't have to be.
+        </p>
+        <div class="mt-5">
+          <PrimaryCTA title="See my work" url="/products" />
+        </div>
+      </div>
+
+      <!-- Recognition -->
+      <div
+        class="rounded-xl border border-neutral-200 p-6 dark:border-neutral-700"
+      >
+        <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+          Recognition
+        </h3>
+        <ul class="mt-3 space-y-2">
+          <li class="flex items-start gap-1.5 text-neutral-600 dark:text-neutral-400">
+            <Icon name="checkCircle" />
+            <span>
+              <strong class="text-neutral-800 dark:text-neutral-200">Cannes Lions</strong>
+              — Young Lions competition (Absolut Vodka)
+            </span>
+          </li>
+          <li class="flex items-start gap-1.5 text-neutral-600 dark:text-neutral-400">
+            <Icon name="checkCircle" />
+            <span>
+              <strong class="text-neutral-800 dark:text-neutral-200">FIAP</strong>
+              — Young Creatives Awards (MTV Networks)
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-pretty italic text-neutral-600 dark:text-neutral-400">
+        When I'm not building websites, I'm usually painting or behind a
+        camera — the design eye doesn't switch off.
+      </p>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <HeroSectionAlt
+    title="Working on something?"
+    subTitle="Tell me about your business and what you're trying to do — I'll give you an honest read on how I'd approach it."
+    btnTitle="Get in touch"
+    url="/contact"
+  />
+</MainLayout>
