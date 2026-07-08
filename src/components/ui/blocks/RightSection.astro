@@ -31,7 +31,7 @@ interface Props {
 ---
 <!-- Root section of the component -->
 <section
-  class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-8 sm:px-6 sm:py-12 lg:grid lg:grid-cols-2 lg:px-8 lg:py-10 2xl:max-w-full"
 >
   <div>
     <!-- Title of the section -->
@@ -55,7 +55,7 @@ interface Props {
       <div class="mt-8">
         <!-- Single image -->
         <Image
-          class="w-full rounded-lg"
+          class="aspect-4/3 w-full rounded-lg object-cover"
           src={imgOne}
           alt={imgOneAlt}
           format={"avif"}
@@ -65,7 +65,7 @@ interface Props {
       <div class="mt-8 grid grid-cols-2 gap-4">
         <!-- First image in a two-image layout -->
         <Image
-          class="w-full rounded-xl"
+          class="aspect-4/3 w-full rounded-xl object-cover"
           src={imgOne}
           alt={imgOneAlt}
           draggable={"false"}
@@ -73,7 +73,7 @@ interface Props {
         />
         <!-- Second image in a two-image layout -->
         <Image
-          class="mt-4 w-full rounded-xl lg:mt-10"
+          class="aspect-4/3 mt-4 w-full rounded-xl object-cover lg:mt-10"
           src={imgTwo}
           alt={imgTwoAlt}
           draggable={"false"}
