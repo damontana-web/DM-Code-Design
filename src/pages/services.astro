@@ -4,17 +4,12 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
 import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import RightSection from "@components/ui/blocks/RightSection.astro";
-import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 
 // Import necessary images
 import blueprints from "@images/blueprints-image.avif";
 import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
-import progressBuilding from "@images/progress-building.avif";
-import underConstruction from "@images/under-construction.avif";
+import dashboardImage from "@images/dashboard-image.avif";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -36,9 +31,9 @@ interface Article {
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Delivering Expert Guidance",
+    title: "Design you can see before it's built",
     subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
+      "Every project starts in Figma. You'll see full designs of your site — and can click through a working prototype — before I write a single line of code. That means feedback happens early, when changes are quick and cheap, not after everything's been built. By the time development starts, there are no surprises left.",
     single: false,
     imgOne: blueprints,
     imgOneAlt: "Blueprints and digital tablet with construction plans.",
@@ -47,79 +42,80 @@ const articles: Article[] = [
   },
   {
     isRightSection: false,
-    title: "Transforming Designs into Reality",
+    title: "Built on the right platform for you",
     subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
-    img: beforeAfter,
-    imgAlt: "Construction site before and after",
+      "Once the design's approved, I build it — on WordPress if you want to manage content yourself, or a modern lightweight setup if speed and low maintenance matter more. That choice depends on how you'll actually use the site, and it's a conversation we have before anything starts. Either way, the site is fast, works properly on phones, and belongs entirely to you.",
+    img: dashboardImage,
+    imgAlt: "Screen mockup of a finished website",
     btnExists: true,
-    btnTitle: "Learn More",
-    btnURL: "#",
+    btnTitle: "See recent work",
+    btnURL: "/products",
   },
   {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "A look that carries across everything",
     subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
-    single: false,
-    imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
-    imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
+      "Your website is one piece of a bigger picture. I design logos, colour palettes, and brand guidelines that work everywhere your business shows up — the site, your socials, your signage, your invoices. If you already have a brand, I'll work within it. If you don't, we can build one that suits the business you actually run.",
+    single: true,
+    imgOne: dashboardImage,
+    imgOneAlt: "Screen mockup of a designed website",
   },
   {
     isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
+    title: "Support that doesn't end at launch",
     subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
-    img: usingTools,
-    imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+      "Websites need occasional attention — updates, small changes, the odd thing that breaks. Every project includes a handover so you can manage the basics yourself, plus a few weeks of post-launch support. If you'd rather not touch it at all, I offer a monthly retainer: set fee, no lock-in contracts, and things get faster over time as I get to know your business.",
+    img: personWorking,
+    imgAlt: "Person working at a desk",
   },
   {
     isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
+    title: "White-label support for agencies and studios",
     subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
+      "I also work as an external designer and developer for creative and digital agencies — Figma-to-code builds, front-end development, or overflow capacity when the workload spikes. I've spent years embedded in agency workflows, so I'm comfortable with your tools, your processes, and your client deadlines. Your clients deal with you; I make you look good.",
     single: false,
-    imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
-    imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgOne: blueprints,
+    imgOneAlt: "Wireframes and project planning documents",
+    imgTwo: dashboardImage,
+    imgTwoAlt: "Screen mockup representing agency handoff work",
     btnExists: true,
-    btnTitle: "Read more",
-    btnURL: "#",
+    btnTitle: "Get in touch",
+    btnURL: "/contact",
   },
 ];
 
-const pageTitle: string = `Services | ${SITE.title}`;
+const pageTitle: string =
+  "Web Design, Development & Branding Services | DaMontana";
+const pageDescription: string =
+  "Web design, development, branding and ongoing support for small businesses — plus white-label help for agencies. Designed in Figma, built to last.";
 ---
 
 <MainLayout
   title={pageTitle}
+  meta={pageDescription}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/services",
-    "url": "https://screwfast.uk/services",
-    "name": "Expert Consultation Services | ScrewFast",
-    "description": "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    "@id": `${SITE.url}/services`,
+    "url": `${SITE.url}/services`,
+    "name": pageTitle,
+    "description": pageDescription,
     "isPartOf": {
         "@type": "WebSite",
-        "url": "https://screwfast.uk",
-        "name": "ScrewFast",
-        "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+        "url": SITE.url,
+        "name": SITE.title,
+        "description": SITE.description
     },
     "inLanguage": "en-US"
   }}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="What I can do for your business"
+    subTitle="Every project is different, but the approach is the same: understand what your business actually needs, design it properly, build it well, and stay available afterwards. Here's what that covers."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
-    btnURL="#"
+    btnTitle="Book a call"
+    btnURL="/contact"
   />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
@@ -157,25 +153,11 @@ const pageTitle: string = `Services | ${SITE.title}`;
       );
     })
   }
-  <!--FeaturesStats section showcases essential stats valuable to users-->
-  <FeaturesStats
-    title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
-    mainStatTitle="96%"
-    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
-    stats={[
-      {
-        stat: "99.8%",
-        description: "project completion rate",
-      },
-      {
-        stat: "5,000+",
-        description: "successful installations",
-      },
-      {
-        stat: "85%",
-        description: "client growth year-over-year",
-      },
-    ]}
+  <!--Closing CTA-->
+  <HeroSectionAlt
+    title="Not sure which of these you need?"
+    subTitle="That's normal — most people aren't sure until we talk it through. Book a call, tell me what's going on with your business, and I'll tell you what I'd do."
+    btnTitle="Book a call"
+    url="/contact"
   />
 </MainLayout>

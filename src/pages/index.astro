@@ -16,9 +16,14 @@ import pricing from "@data/pricing.json";
 import personWorking from "@images/person-working.avif";
 import dashboard from "@images/dashboard-image.avif";
 import progressBuilding from "@images/progress-building.avif";
+
+const pageTitle: string =
+  "DaMontana Design + Code | Web Designer & Developer, Melbourne";
+const pageDescription: string =
+  "Melbourne web designer and developer for small businesses. Design + code by one person, start to finish — no handovers, no agencies.";
 ---
 
-<MainLayout>
+<MainLayout title={pageTitle} meta={pageDescription}>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore DaMontana Code + Design on GitHub"

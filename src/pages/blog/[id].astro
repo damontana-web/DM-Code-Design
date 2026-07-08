@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
 import { Image } from "astro:assets";
@@ -105,6 +106,10 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
             )
           )
         }
+      </div>
+      <!--Contact CTA linking the post's closing line to a real /contact link-->
+      <div class="mb-5 md:mb-8">
+        <PrimaryCTA url="/contact" title="Ask me — no obligation" />
       </div>
       <div
         class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"

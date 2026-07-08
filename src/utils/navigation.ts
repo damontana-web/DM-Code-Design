@@ -1,7 +1,7 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
+  { name: "Portfolio", url: "/products" },
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
@@ -26,11 +26,10 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  behance: "https://www.behance.net/damontana",
+  instagram: "https://www.instagram.com/damontana.ideas",
+  dribbble: "https://dribbble.com/damontana",
+  linkedin: "https://www.linkedin.com/in/damontana/",
 };
 
 export default {

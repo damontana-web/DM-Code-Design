@@ -9,11 +9,12 @@ import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
-const title: string = "Contact us";
+const title: string = "Let's talk about your project";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+  "Whether you've got a full brief or just a rough idea, send it through. I'll come back with my honest take on what I'd do and roughly what it would cost — no obligation, no hard sell.";
+const formTitle: string = "Tell me a bit about it";
+const formSubTitle: string = "I reply within 1–2 business days.";
+const contactEmail: string = "hello@damontana.com.au";
 ---
 
 <!-- Contact Us -->
@@ -41,29 +42,23 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
         <form>
           <div class="grid gap-4">
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <TextInput
-                id="hs-firstname-contacts"
-                label="First Name"
-                name="hs-firstname-contacts"
-              />
-              <TextInput
-                id="hs-lastname-contacts"
-                label="Last Name"
-                name="hs-firstname-contacts"
-              />
-            </div>
+            <TextInput
+              id="hs-firstname-contacts"
+              label="First Name"
+              name="hs-firstname-contacts"
+            />
             <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
+            <PhoneInput id="hs-phone-number" label="Phone (optional)" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Details"
+              label="Message"
               name="hs-about-contacts"
+              placeholder="What does your business do, and what do you need? Rough is fine."
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Send message" />
           </div>
 
           <div class="mt-3 text-center">
@@ -74,43 +69,37 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         </form>
       </div>
 
-      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
+      <!--ContactIconBlocks cover the other ways to get in touch: email, FAQ, location, and agency enquiries.-->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
+          heading="Prefer email?"
+          content={`No forms necessary — write to me directly at`}
           isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="question" />
+          linkTitle={contactEmail}
+          linkURL={`mailto:${contactEmail}`}
+          ><Icon name="envelopeOpen" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
+          heading="Common questions"
+          content="Costs, timelines, and what happens after launch — most of it's answered here."
           isLinkVisible={true}
-          linkTitle="Visit FAQ"
-          linkURL="#"
+          linkTitle="Read the FAQ"
+          linkURL="/#faq"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
+          heading="Based in Melbourne"
+          content="I work with businesses across Australia. Happy to meet in person if you're local, or over a call if you're not."
           ><Icon name="mapPin" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
-          isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
-          linkURL="#"
-          ><Icon name="envelopeOpen" />
+          heading="Agencies and studios"
+          content="Looking for white-label design or development support? Mention it in your message and I'll send through how I usually work with agencies."
+          ><Icon name="community" />
         </ContactIconBlock>
       </div>
     </div>

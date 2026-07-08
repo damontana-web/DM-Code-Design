@@ -1,13 +1,13 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "DaMontana Code + Design",
+  title: "DaMontana Design + Code",
   tagline: "Design + Code Seamlessly Delivered",
   description:
-    "DaMontana Code + Design offers expert UX/UI design and front-end development services. Helping digital agencies and companies bring bold interactive ideas to life with pixel-perfect execution.",
+    "Melbourne web designer and developer for small businesses. Design + code by one person, start to finish — no handovers, no agencies.",
   description_short:
-    "Expert UX/UI design and front-end development for digital agencies and companies.",
-  url: "https://screwfast.uk",
+    "Melbourne web designer and developer for small businesses.",
+  url: "https://damontana.com.au",
   author: "David Montana",
 };
 
@@ -35,9 +35,8 @@ export const OG = {
   locale: "en_US",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: UX/UI Design & Front-End Development`,
-  description:
-    "Transform your digital vision into reality with DaMontana Code + Design. Expert UX/UI design and front-end development services for agencies and companies. Pixel-perfect execution, seamless collaboration.",
+  title: "DaMontana Design + Code | Web Designer & Developer, Melbourne",
+  description: SITE.description,
   image: ogImageSrc,
 };
 

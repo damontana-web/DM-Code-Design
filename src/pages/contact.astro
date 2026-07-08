@@ -4,26 +4,27 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import { SITE } from "@data/constants";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = "Contact | DaMontana Design + Code, Melbourne";
+const pageDescription: string =
+  "Got a project in mind, or just a rough idea? Tell me about your business and I'll give you an honest take on what I'd do — no obligation.";
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
   title={pageTitle}
+  meta={pageDescription}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    "url": "https://screwfast.uk/contact",
-    "name": "Contact Us | ScrewFast",
-    "description":
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+    "@id": `${SITE.url}/contact`,
+    "url": `${SITE.url}/contact`,
+    "name": pageTitle,
+    "description": pageDescription,
     "isPartOf": {
       "@type": "WebSite",
-      "url": "https://screwfast.uk",
-      "name": "ScrewFast",
-      "description":
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      "url": SITE.url,
+      "name": SITE.title,
+      "description": SITE.description,
     },
     "inLanguage": "en-US"
   }}

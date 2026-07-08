@@ -31,32 +31,31 @@ const mostRecentPost: CollectionEntry<"blog"> | undefined = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Your Gateway to Construction Excellence";
+const title: string = "Notes on websites and design";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
-const secondTitle: string = "Insights";
-const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
+  "Plain-English articles for business owners — what websites actually cost, what's worth paying for, and what you can safely ignore. No jargon, no sales pitch.";
+const secondTitle: string = "More articles";
 
-const pageTitle: string = `Blog | ${SITE.title}`;
+const pageTitle: string = "Notes on Websites & Design | DaMontana";
+const pageDescription: string =
+  "Plain-English articles on what websites cost, what's worth paying for, and what you can skip. Written for business owners, not developers.";
 ---
 
 <MainLayout
   title={pageTitle}
+  meta={pageDescription}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/blog",
-    url: "https://screwfast.uk/blog",
-    name: "Blog | ScrewFast",
-    description:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
+    "@id": `${SITE.url}/blog`,
+    url: `${SITE.url}/blog`,
+    name: pageTitle,
+    description: pageDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
-      description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
     },
     inLanguage: "en-US",
   }}
@@ -106,9 +105,6 @@ const pageTitle: string = `Blog | ${SITE.title}`;
       >
         {secondTitle}
       </h2>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {secondSubTitle}
-      </p>
     </div>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
