@@ -47,15 +47,26 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 ---
 
 <MainLayout title={pageTitle}>
-  <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
-    <div class="max-w-2xl">
-      <div class="mb-6 flex items-center justify-between">
-        <div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">
-          <AvatarBlogLarge blogEntry={post} />
-          <div class="grow">
-            <div class="flex items-center justify-between gap-x-2">
+  <section class="py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-(--breakpoint-xl) px-4 md:px-8">
+      <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+        <!--Cover image + author/meta panel-->
+        <div>
+          <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-auto">
+            <Image
+              class="h-full w-full object-cover object-center"
+              src={post.data.cardImage}
+              alt={post.data.cardImageAlt}
+              draggable={"false"}
+              format={"avif"}
+            />
+          </div>
+
+          <div class="mt-10 space-y-6">
+            <!--Author info-->
+            <div class="flex items-center gap-x-3">
+              <AvatarBlogLarge blogEntry={post} />
               <div>
-                <!--Post metadata and author info-->
                 <span class="font-bold text-neutral-700 dark:text-neutral-300">
                   {post.data.author}
                 </span>
@@ -73,77 +84,65 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
                 </ul>
               </div>
             </div>
+
+            <div class="h-px w-full bg-neutral-300 dark:bg-neutral-700"></div>
+
+            <!--Blog post tags-->
+            <div
+              class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
+            >
+              {
+                post.data.tags?.map((tag: string) => (
+                  <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:outline-hidden focus-visible:ring-3 dark:bg-neutral-700/60 dark:text-neutral-300">
+                    {capitalize(tag)}
+                  </span>
+                ))
+              }
+            </div>
+
+            <!--Bookmark and Share buttons-->
+            <div class="flex items-center gap-x-1.5">
+              <Bookmark />
+              <div
+                class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
+              >
+              </div>
+              <div class="inline-flex">
+                <SocialShare pageTitle={post.data.title} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!--Blog post title-->
-      <h2
-        class="mb-3 text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl"
-      >
-        {post.data.title}
-      </h2>
-      <!--Blog post contents-->
-      <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {
-          post.data.contents.map((content: string, index: any) =>
-            index === 1 ? (
-              <>
-                <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                  {content}
-                </p>
-                <Image
-                  class="w-full rounded-xl object-cover"
-                  src={post.data.cardImage}
-                  alt={post.data.cardImageAlt}
-                  draggable={"false"}
-                  format={"avif"}
-                />
-              </>
-            ) : (
-              <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                {content}
-              </p>
-            )
-          )
-        }
-      </div>
-      <!--Contact CTA linking the post's closing line to a real /contact link-->
-      <div class="mb-5 md:mb-8">
-        <PrimaryCTA url="/contact" title="Ask me — no obligation" />
-      </div>
-      <div
-        class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-      >
-        <!--Blog post tags-->
-        <div
-          class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
-        >
-          {
-            post.data.tags?.map((tag: string) => (
-              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:outline-hidden focus-visible:ring-3 dark:bg-neutral-700/60 dark:text-neutral-300">
-                {capitalize(tag)}
-              </span>
-            ))
-          }
-        </div>
-        <!--Bookmark and Share buttons-->
-        <div class="flex items-center justify-end gap-x-1.5">
-          <Bookmark />
-          <div
-            class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
+
+        <!--Title + article content-->
+        <div class="md:pt-8">
+          <h1
+            class="mb-4 text-balance text-center text-2xl text-neutral-800 dark:text-neutral-200 sm:text-3xl md:mb-6 md:text-left"
           >
+            {post.data.title}
+          </h1>
+
+          <article class="space-y-5 text-pretty text-lg text-neutral-700 dark:text-neutral-300">
+            {
+              post.data.contents.map((content: string) => (
+                <p>{content}</p>
+              ))
+            }
+          </article>
+
+          <!--Contact CTA linking the post's closing line to a real /contact link-->
+          <div class="mt-8">
+            <PrimaryCTA url="/contact" title="Ask me — no obligation" />
           </div>
-          <div class="inline-flex">
-            <SocialShare pageTitle={post.data.title} />
-          </div>
+
+          <PostFeedback
+            title="Was this post helpful?"
+            firstChoice="Yes"
+            secondChoice="No"
+          />
         </div>
       </div>
     </div>
-    <PostFeedback
-      title="Was this post helpful?"
-      firstChoice="Yes"
-      secondChoice="No"
-    />
   </section>
 
   <!--Related articles section-->
