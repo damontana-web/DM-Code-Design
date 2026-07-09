@@ -44,9 +44,16 @@ Example:
   <span class="grow">
     <!-- Heading of the tab, changes color when active -->
     <span
-      class="block text-lg font-bold text-blue-darkest hs-tab-active:text-magenta-400 dark:hs-tab-active:text-magenta-300"
+      class="flex items-center gap-2 text-lg font-bold text-blue-darkest hs-tab-active:text-magenta-400 dark:hs-tab-active:text-magenta-300"
     >
-      {headingIcon && <HeadingIcon d={headingIcon} color="#EA2295" />}{heading}
+      {headingIcon && (
+        <HeadingIcon
+          d={headingIcon}
+          color="#EA2295"
+          size="2.25em"
+          flexAlign
+        />
+      )}{heading}
     </span>
     <!-- Content of the tab, changes color when active -->
     <span
