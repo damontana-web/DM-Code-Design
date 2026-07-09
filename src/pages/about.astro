@@ -6,6 +6,7 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 import { SITE } from "@data/constants";
 
 import personWorking from "@images/person-working.avif";
@@ -48,6 +49,7 @@ const pageDescription: string =
     single={true}
     imgOne={personWorking}
     imgOneAlt="Person working at a desk"
+    icon="M8 20h6v-2h2v2h4v2H4v-2h2v-2h2v2Zm-4 0H2V4h2v16Zm18 0h-2v-4h-2v-2h2V4h2v16Zm-12-2H8v-2h2v2Zm4 0h-2v-2h2v2Zm-2-2h-2v-2h2v2Zm4 0h-2v-2h2v2Zm2-2h-2v-2h2v2Zm-8-2H8v-2h2v2Zm-2-2H6V8h2v2Zm4 0h-2V8h2v2Zm-2-2H8V6h2v2Zm10-4H4V2h16v2Z"
   />
 
   <!-- Section 2 — The agency years -->
@@ -56,6 +58,7 @@ const pageDescription: string =
     subTitle="Early in my career I worked inside advertising and creative agencies, including Young & Rubicam — one of the biggest names in the industry. Agency work teaches you two things fast: how to deliver at a professional standard under real deadlines, and how big-brand thinking actually works. Along the way, my work picked up awards at Cannes Lions (Young Lions competition) and FIAP, the Ibero-American advertising festival."
     img={dashboardImage}
     imgAlt="Screen mockup representing creative work"
+    icon="M15 22H9v-6h6v6Zm-4-2h2v-2h-2v2Zm-2-4H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 14H5V8h2v6Zm12 0h-2V8h2v6ZM3 12H0v-2h3v2Zm21 0h-3v-2h3v2ZM9 8H7V6h2v2Zm8 0h-2V6h2v2ZM5 6H3V4h2v2Zm10 0H9V4h6v2Zm6 0h-2V4h2v2ZM3 4H1V2h2v2Zm20 0h-2V2h2v2ZM13 3h-2V0h2v3Z"
   />
 
   <!-- Section 3 — Then I went out on my own -->
@@ -65,6 +68,7 @@ const pageDescription: string =
     single={true}
     imgOne={personWorking}
     imgOneAlt="Person working independently at a desk"
+    icon="M17 9h-2v13h-2v-6h-2v6H9V9H7V7h10v2Zm-6 5h2V9h-2v5ZM7 7H5V5h2v2Zm12 0h-2V5h2v2Zm-5-1h-4V2h4v4ZM5 5H3V3h2v2Zm16 0h-2V3h2v2Z"
   />
 
   <!-- Section 4 — What that means for you -->
@@ -73,6 +77,7 @@ const pageDescription: string =
     subTitle="Everything on this site comes from those years: design in Figma first so you see it before it's built, code it myself so nothing gets lost in handover, explain everything in plain English because most of my clients aren't web people — and shouldn't have to be."
     img={dashboardImage}
     imgAlt="Screen mockup representing a finished website"
+    icon="M20 22H4v-2h16v2ZM4 20H2V4h2v16ZM18 4h-2v2h2V4h2v2h2v14h-2V8h-6V4H4V2h14v2Zm-4 14h-4v-2h4v2Zm-4-2H8v-2h2v2Zm6 0h-2v-2h2v2Zm-6-4H8v-2h2v2Zm6 0h-2v-2h2v2Z"
     btnExists={true}
     btnTitle="See my work"
     btnURL="/portfolio"
@@ -83,8 +88,8 @@ const pageDescription: string =
     <div
       class="mx-auto max-w-3xl rounded-xl border border-neutral-200 p-6 dark:border-neutral-700"
     >
-      <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
-        Recognition
+      <h3 class="font-bold text-blue-darkest">
+        <HeadingIcon d="M16 17h-3v2h2v2H9v-2h2v-2H8v-2h8v2Zm2-12h4v6h-2V7h-2v4h2v2h-2v2h-2V5H8v10H6v-2H4v-2h2V7H4v4H2V5h4V3h12v2Z" />Recognition
       </h3>
       <ul class="mt-3 space-y-2">
         <li class="flex items-start gap-1.5 text-neutral-600 dark:text-neutral-400">

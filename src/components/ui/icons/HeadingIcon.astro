@@ -1,0 +1,22 @@
+---
+interface Props {
+  d: string | string[];
+  color?: string;
+  size?: string;
+  centered?: boolean;
+}
+
+const { d, color = "#1A468E", size = "1em", centered = false } = Astro.props;
+const paths = Array.isArray(d) ? d : [d];
+const positionStyle = centered
+  ? "display: block; margin: 0 auto 0.5rem;"
+  : "margin-right: 0.5rem; vertical-align: middle;";
+---
+
+<svg
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  style={`height: ${size}; width: auto; color: ${color}; ${positionStyle}`}
+>
+  {paths.map((p) => <path d={p} />)}
+</svg>

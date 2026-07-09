@@ -2,12 +2,13 @@
 // Import the necessary dependencies
 import { Image } from "astro:assets";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
-import Icon from "@components/ui/icons/Icon.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 
 interface Feature {
   heading: string;
   content: string;
   svg: string;
+  icon: string | string[];
 }
 
 interface Props {
@@ -46,9 +47,9 @@ const { title, subTitle, src, alt, features } = Astro.props;
     <div class="lg:col-span-1">
       <!-- Rendering title -->
       <h2
-        class="text-balance text-2xl text-neutral-800 dark:text-neutral-200 md:text-3xl"
+        class="text-balance text-2xl text-blue-darkest md:text-3xl"
       >
-        {title}
+        <HeadingIcon d="M2 8h2v12H2zm18 0h2v12h-2zM4 6h16v2H4zm0 14h16v2H4zM8 4h2v2H8zm2-2h4v2h-4zm4 2h2v2h-2z" />{title}
       </h2>
       <!-- Rendering subtitle -->
       {
@@ -67,7 +68,7 @@ const { title, subTitle, src, alt, features } = Astro.props;
         { features &&
           features.map((feature) => (
             <IconBlock heading={feature.heading} content={feature.content}>
-              <Icon name={feature.svg} />
+              <HeadingIcon d={feature.icon} size="2rem" />
             </IconBlock>
           ))
         }

@@ -26,6 +26,7 @@ interface Article {
   imgOneAlt?: string;
   imgTwo?: any;
   imgTwoAlt?: string;
+  icon?: string | string[];
 }
 
 const articles: Article[] = [
@@ -39,6 +40,7 @@ const articles: Article[] = [
     imgOneAlt: "Blueprints and digital tablet with construction plans.",
     imgTwo: personWorking,
     imgTwoAlt: "Person working in the office",
+    icon: "M4 16H6V18H8V20H10V22H2V14H4V16ZM12 20H10V18H12V20ZM14 18H12V16H14V18ZM10 16H8V14H10V16ZM16 16H14V14H16V16ZM6 14H4V12H6V14ZM12 14H10V12H12V14ZM18 14H16V12H18V14ZM8 12H6V10H8V12ZM14 12H12V10H14V12ZM20 12H18V10H20V12ZM10 10H8V8H10V10ZM18 10H16V8H18V10ZM22 10H20V8H22V10ZM12 8H10V6H12V8ZM16 8H14V6H16V8ZM20 8H18V6H20V8ZM14 6H12V4H14V6ZM18 6H16V4H18V6ZM16 4H14V2H16V4Z",
   },
   {
     isRightSection: false,
@@ -50,6 +52,7 @@ const articles: Article[] = [
     btnExists: true,
     btnTitle: "See my work",
     btnURL: "/portfolio",
+    icon: "M20 22H4v-2h16v2ZM4 20H2V4h2v16Zm18 0h-2V4h2v16ZM8 18H6v-2h2v2Zm8 0h-4v-2h4v2Zm-6-2H8v-2h2v2Zm-2-2H6v-2h2v2ZM20 4H4V2h16v2Z",
   },
   {
     isRightSection: true,
@@ -59,6 +62,7 @@ const articles: Article[] = [
     single: true,
     imgOne: dashboardImage,
     imgOneAlt: "Screen mockup of a designed website",
+    icon: "M9 11h2v2H9zm4 0h2v2h-2zM7 7h10v2H7zM5 9h2v6H5zm2 6h10v2H7zm10-6h2v6h-2zm-6-4h2v2h-2zM4 2h4v2H4zm0 18h4v2H4zM16 2h4v2h-4zm0 18h4v2h-4zM2 4h2v4H2zm0 12h2v4H2zM20 4h2v4h-2zm0 12h2v4h-2z",
   },
   {
     isRightSection: false,
@@ -67,6 +71,7 @@ const articles: Article[] = [
       "Websites need occasional attention — updates, small changes, the odd thing that breaks. Every project includes a handover so you can manage the basics yourself, plus a few weeks of post-launch support. If you'd rather not touch it at all, I offer a monthly retainer: set fee, no lock-in contracts, and things get faster over time as I get to know your business.",
     img: personWorking,
     imgAlt: "Person working at a desk",
+    icon: "M13 16h2v4h2v2H7v-2h2v-4h2v-2h2v2Zm-6 4H5v-2h2v2Zm12 0h-2v-2h2v2ZM5 18H3v-8h2v8Zm16 0h-2v-6h2v6Zm-6-6h-2v-2h2v2Zm4 0h-2v-2h2v2ZM7 10H5V8h2v2Zm6 0h-2V6h2v4Zm4 0h-2V8h2v2ZM9 8H7V6h2v2Zm2-2H9V2h2v4Z",
   },
   {
     isRightSection: true,
@@ -81,6 +86,7 @@ const articles: Article[] = [
     btnExists: true,
     btnTitle: "Get in touch",
     btnURL: "/contact",
+    icon: "M6 2h12v2H6zM4 4h2v18H4zm14 0h2v18h-2zm-2 16h2v2h-2zm-2-2h2v2h-2zm-8 2h2v2H6zm2-2h2v2H8zm2-2h4v2h-4z",
   },
 ];
 
@@ -139,6 +145,7 @@ const pageDescription: string =
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}
+          icon={article.icon}
         />
       ) : (
         <LeftSection
@@ -149,6 +156,7 @@ const pageDescription: string =
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}
+          icon={article.icon}
         />
       );
     })

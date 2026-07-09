@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
 import CardInsight from "@components/ui/cards/CardInsight.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -66,9 +67,9 @@ const pageDescription: string =
     <!--Page header-->
     <div class="mx-auto max-w-3xl text-left sm:text-center">
       <h1
-        class="block text-balance text-4xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+        class="block text-balance text-4xl tracking-tight text-blue-darkest md:text-5xl lg:text-6xl"
       >
-        {title}
+        <HeadingIcon d="M22 22h-2v-2h-2v-2h2V4h2v18Zm-4-4H4v-2h14v2ZM4 16H2V4h2v12Zm8-4H6v-2h6v2Zm6-4H6V6h12v2Zm2-4H4V2h16v2Z" size="0.85em" />{title}
       </h1>
 
       <p
@@ -101,7 +102,7 @@ const pageDescription: string =
   >
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
       <h2
-        class="text-2xl text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        class="text-2xl text-blue-darkest md:text-4xl md:leading-tight"
       >
         {secondTitle}
       </h2>

@@ -1,6 +1,9 @@
 ---
 // Extract properties from Astro.props
-const { aria, dataTab, id, heading, content, first } = Astro.props;
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
+
+const { aria, dataTab, id, heading, headingIcon, content, first } =
+  Astro.props;
 
 // Define TypeScript interface for properties
 interface Props {
@@ -8,6 +11,7 @@ interface Props {
   id: string;
   aria: string;
   heading?: string;
+  headingIcon?: string;
   content?: string;
   first?: boolean;
 }
@@ -36,21 +40,18 @@ Example:
   aria-controls={aria}
   role="tab"
 >
-  <!-- Slot for additional content -->
-  <span class="flex">
-    <slot />
-    <!-- Container for the heading and content of the tab -->
-    <span class="ms-6 grow">
-      <!-- Heading of the tab, changes color when active -->
-      <span
-        class="block text-lg font-bold text-neutral-800 hs-tab-active:text-magenta-400 dark:text-neutral-200 dark:hs-tab-active:text-magenta-300"
-        >{heading}</span
-      >
-      <!-- Content of the tab, changes color when active -->
-      <span
-        class="mt-1 block text-neutral-500 hs-tab-active:text-neutral-600 dark:text-neutral-400 dark:hs-tab-active:text-neutral-200"
-        >{content}</span
-      >
+  <!-- Container for the heading and content of the tab -->
+  <span class="grow">
+    <!-- Heading of the tab, changes color when active -->
+    <span
+      class="block text-lg font-bold text-blue-darkest hs-tab-active:text-magenta-400 dark:hs-tab-active:text-magenta-300"
+    >
+      {headingIcon && <HeadingIcon d={headingIcon} color="#EA2295" />}{heading}
     </span>
+    <!-- Content of the tab, changes color when active -->
+    <span
+      class="mt-1 block text-neutral-500 hs-tab-active:text-neutral-600 dark:text-neutral-400 dark:hs-tab-active:text-neutral-200"
+      >{content}</span
+    >
   </span>
 </button>

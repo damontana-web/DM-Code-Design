@@ -2,8 +2,9 @@
 // Import the necessary modules
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 // Destructure the props passed to the Astro component
-const { title, subTitle, btnExists, btnTitle, btnURL, img, imgAlt } =
+const { title, subTitle, btnExists, btnTitle, btnURL, img, imgAlt, icon } =
   Astro.props;
 // Define TypeScript interface for props
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
   btnURL?: string;
   img: any;
   imgAlt: any;
+  icon?: string | string[];
 }
 ---
 
@@ -33,9 +35,9 @@ interface Props {
   <div class="order-1 mt-4 md:order-2 md:mt-0">
     <!-- The title of the section -->
     <h2
-      class="mb-4 text-balance text-4xl tracking-tight text-neutral-800 dark:text-neutral-200"
+      class="mb-4 text-balance text-4xl tracking-tight text-blue-darkest"
     >
-      {title}
+      {icon && <HeadingIcon d={icon} />}{title}
     </h2>
     <!-- The subtitle of the section -->
     <p

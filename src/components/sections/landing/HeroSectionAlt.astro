@@ -1,6 +1,7 @@
 ---
 // Import the necessary dependencies
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 
 // Define props from Astro
 const { title, subTitle, url, btnTitle } = Astro.props;
@@ -37,8 +38,13 @@ interface Props {
   </div>
   <!-- Hero Section Heading -->
   <div class="mx-auto mt-5 max-w-xl text-center">
+    <HeadingIcon
+      d="M15 22H9v-6h6v6Zm-4-2h2v-2h-2v2Zm-2-4H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 14H5V8h2v6Zm12 0h-2V8h2v6ZM3 12H0v-2h3v2Zm21 0h-3v-2h3v2ZM9 8H7V6h2v2Zm8 0h-2V6h2v2ZM5 6H3V4h2v2Zm10 0H9V4h6v2Zm6 0h-2V4h2v2ZM3 4H1V2h2v2Zm20 0h-2V2h2v2ZM13 3h-2V0h2v3Z"
+      size="2.5rem"
+      centered
+    />
     <h2
-      class="block text-balance text-4xl leading-tight tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      class="block text-balance text-4xl leading-tight tracking-tight text-blue-darkest md:text-5xl lg:text-6xl"
     >
       {title}
     </h2>
