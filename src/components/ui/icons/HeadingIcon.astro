@@ -4,19 +4,24 @@ interface Props {
   color?: string;
   size?: string;
   centered?: boolean;
+  flexAlign?: boolean;
 }
 
-const { d, color = "#1A468E", size = "1em", centered = false } = Astro.props;
+const { d, color, size = "1em", centered = false, flexAlign = false } =
+  Astro.props;
 const paths = Array.isArray(d) ? d : [d];
 const positionStyle = centered
   ? "display: block; margin: 0 auto 0.5rem;"
-  : "margin-right: 0.5rem; vertical-align: middle;";
+  : flexAlign
+    ? "flex-shrink: 0;"
+    : "margin-right: 0.5rem; vertical-align: middle;";
+const colorStyle = color ? `color: ${color};` : "";
 ---
 
 <svg
   viewBox="0 0 24 24"
   fill="currentColor"
-  style={`height: ${size}; width: auto; color: ${color}; ${positionStyle}`}
+  style={`height: ${size}; width: auto; ${colorStyle} ${positionStyle}`}
 >
   {paths.map((p) => <path d={p} />)}
 </svg>

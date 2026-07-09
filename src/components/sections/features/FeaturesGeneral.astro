@@ -47,9 +47,13 @@ const { title, subTitle, src, alt, features } = Astro.props;
     <div class="lg:col-span-1">
       <!-- Rendering title -->
       <h2
-        class="text-balance text-2xl text-blue-darkest md:text-3xl"
+        class="flex items-center gap-2 text-balance text-2xl text-gray-700 md:text-3xl"
       >
-        <HeadingIcon d="M2 8h2v12H2zm18 0h2v12h-2zM4 6h16v2H4zm0 14h16v2H4zM8 4h2v2H8zm2-2h4v2h-4zm4 2h2v2h-2z" />{title}
+        <HeadingIcon
+          d="M2 8h2v12H2zm18 0h2v12h-2zM4 6h16v2H4zm0 14h16v2H4zM8 4h2v2H8zm2-2h4v2h-4zm4 2h2v2h-2z"
+          size="1.5em"
+          flexAlign
+        />{title}
       </h2>
       <!-- Rendering subtitle -->
       {
@@ -68,7 +72,7 @@ const { title, subTitle, src, alt, features } = Astro.props;
         { features &&
           features.map((feature) => (
             <IconBlock heading={feature.heading} content={feature.content}>
-              <HeadingIcon d={feature.icon} size="2rem" />
+              <HeadingIcon d={feature.icon} size="1.5em" flexAlign />
             </IconBlock>
           ))
         }
