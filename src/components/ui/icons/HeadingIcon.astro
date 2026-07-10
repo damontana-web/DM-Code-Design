@@ -11,17 +11,17 @@ const { d, color, size = "1em", centered = false, flexAlign = false } =
   Astro.props;
 const paths = Array.isArray(d) ? d : [d];
 const positionStyle = centered
-  ? "display: block; margin: 0 auto 0.5rem;"
+  ? "display: block; margin: 0 auto 0.5rem; flex-shrink: 0;"
   : flexAlign
     ? "flex-shrink: 0;"
-    : "margin-right: 0.5rem; vertical-align: middle;";
+    : "margin-right: 0.5rem; vertical-align: middle; flex-shrink: 0;";
 const colorStyle = color ? `color: ${color};` : "";
 ---
 
 <svg
   viewBox="0 0 24 24"
   fill="currentColor"
-  style={`height: ${size}; width: auto; ${colorStyle} ${positionStyle}`}
+  style={`height: ${size}; width: ${size}; ${colorStyle} ${positionStyle}`}
 >
   {paths.map((p) => <path d={p} />)}
 </svg>

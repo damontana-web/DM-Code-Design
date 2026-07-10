@@ -5,7 +5,6 @@ import MainSection from "@components/ui/blocks/MainSection.astro";
 import RightSection from "@components/ui/blocks/RightSection.astro";
 import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import Icon from "@components/ui/icons/Icon.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 import { SITE } from "@data/constants";
 
@@ -40,6 +39,7 @@ const pageDescription: string =
   <MainSection
     title="About"
     subTitle="I'm David Montana — a designer and developer in Melbourne. I've spent 15 years building websites and brands, first inside big agencies, then independently as DaMontana. Here's the short version of how I got here and how I work."
+    icon="M8 20h6v2H6v-2H4v-2h4v2Zm12-2h2v2h-2v2h-2v-2h-2v-2h2v-2h2v2ZM4 18H2V6h2v12Zm10 0H8v-2h6v2Zm0-4h-4v-2h4v2Zm8 0h-2V6h2v8Zm-12-2H8V8h2v4Zm6 0h-2V8h2v4Zm-2-4h-4V6h4v2ZM6 6H4V4h2v2Zm14 0h-2V4h2v2Zm-2-2H6V2h12v2Z"
   />
 
   <!-- Section 1 — Trained as a designer first -->
@@ -86,31 +86,47 @@ const pageDescription: string =
   <!-- Recognition -->
   <section class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
     <div
-      class="mx-auto max-w-3xl rounded-xl border border-neutral-200 p-6 dark:border-neutral-700"
+      class="mx-auto max-w-3xl rounded-xl border border-white/80 bg-gradient-to-br from-white to-gray-100 p-8 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03)]"
     >
-      <h3 class="flex items-center gap-2 font-bold text-gray-700">
+      <h3 class="flex items-center justify-center gap-2 text-balance text-4xl tracking-tight text-gray-700">
         <HeadingIcon
-          d="M16 17h-3v2h2v2H9v-2h2v-2H8v-2h8v2Zm2-12h4v6h-2V7h-2v4h2v2h-2v2h-2V5H8v10H6v-2H4v-2h2V7H4v4H2V5h4V3h12v2Z"
+          d="M17 9h-2v13h-2v-6h-2v6H9V9H7V7h10v2Zm-6 5h2V9h-2v5ZM7 7H5V5h2v2Zm12 0h-2V5h2v2Zm-5-1h-4V2h4v4ZM5 5H3V3h2v2Zm16 0h-2V3h2v2Z"
           size="1.5em"
           flexAlign
         />Recognition
       </h3>
-      <ul class="mt-3 space-y-2">
-        <li class="flex items-start gap-1.5 text-neutral-600 dark:text-neutral-400">
-          <Icon name="checkCircle" />
-          <span>
-            <strong class="text-neutral-800 dark:text-neutral-200">Cannes Lions</strong>
-            — Young Lions competition (Absolut Vodka)
-          </span>
-        </li>
-        <li class="flex items-start gap-1.5 text-neutral-600 dark:text-neutral-400">
-          <Icon name="checkCircle" />
-          <span>
-            <strong class="text-neutral-800 dark:text-neutral-200">FIAP</strong>
-            — Young Creatives Awards (MTV Networks)
-          </span>
-        </li>
-      </ul>
+      <div class="mt-6 grid grid-cols-2 gap-6 text-center">
+        <div>
+          <HeadingIcon
+            d="M16 17h-3v2h2v2H9v-2h2v-2H8v-2h8v2Zm2-12h4v6h-2V7h-2v4h2v2h-2v2h-2V5H8v10H6v-2H4v-2h2V7H4v4H2V5h4V3h12v2Z"
+            size="2.5rem"
+            color="#EA2295"
+            centered
+          />
+          <p class="text-xl font-bold text-gray-700">Cannes Lions</p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Young Lions competition
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Absolut Vodka
+          </p>
+        </div>
+        <div>
+          <HeadingIcon
+            d="M16 17h-3v2h2v2H9v-2h2v-2H8v-2h8v2Zm2-12h4v6h-2V7h-2v4h2v2h-2v2h-2V5H8v10H6v-2H4v-2h2V7H4v4H2V5h4V3h12v2Z"
+            size="2.5rem"
+            color="#EA2295"
+            centered
+          />
+          <p class="text-xl font-bold text-gray-700">FIAP</p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Young Creatives Awards
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            MTV Networks
+          </p>
+        </div>
+      </div>
     </div>
 
     <p class="mx-auto mt-8 max-w-3xl text-pretty italic text-neutral-600 dark:text-neutral-400">

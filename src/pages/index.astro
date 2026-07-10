@@ -6,7 +6,7 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import RecentWork from "@components/sections/work/RecentWork.astro";
-import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import CTASection from "@components/sections/pricing/CTASection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/HeroImage.png";
@@ -88,7 +88,7 @@ const pageDescription: string =
 
   <RecentWork title="Recent Work" viewAllUrl="/portfolio" />
 
-  <PricingSection pricing={pricing} />
+  <CTASection pricing={pricing} />
 
   <FAQ title="Common Questions" faqs={faqs} />
 
