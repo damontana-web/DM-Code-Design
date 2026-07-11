@@ -8,10 +8,14 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 
 // Import necessary images
 import designImage from "@images/services-design.jpg";
+import designImage2 from "@images/services-design-2.jpg";
 import platformImage from "@images/services-platform.jpg";
+import platformImage2 from "@images/services-platform-2.jpg";
 import brandingImage from "@images/services-branding.jpg";
+import brandingImage2 from "@images/services-branding-2.jpg";
 import supportImage from "@images/services-support.jpg";
 import whiteLabelImage from "@images/services-white-label.jpg";
+import whiteLabelImage2 from "@images/services-white-label-2.jpg";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -37,9 +41,11 @@ const articles: Article[] = [
     title: "Design you can see before it's built",
     subTitle:
       "Every project starts in Figma. You will see full designs before a single line of code is written.",
-    single: true,
+    single: false,
     imgOne: designImage,
     imgOneAlt: "Design work in progress",
+    imgTwo: designImage2,
+    imgTwoAlt: "Design campaign mockups",
     icon: "M4 16H6V18H8V20H10V22H2V14H4V16ZM12 20H10V18H12V20ZM14 18H12V16H14V18ZM10 16H8V14H10V16ZM16 16H14V14H16V16ZM6 14H4V12H6V14ZM12 14H10V12H12V14ZM18 14H16V12H18V14ZM8 12H6V10H8V12ZM14 12H12V10H14V12ZM20 12H18V10H20V12ZM10 10H8V8H10V10ZM18 10H16V8H18V10ZM22 10H20V8H22V10ZM12 8H10V6H12V8ZM16 8H14V6H16V8ZM20 8H18V6H20V8ZM14 6H12V4H14V6ZM18 6H16V4H18V6ZM16 4H14V2H16V4Z",
   },
   {
@@ -49,6 +55,8 @@ const articles: Article[] = [
       "WordPress if you want to manage content yourself, or a modern lightweight setup for speed and low maintenance.",
     img: platformImage,
     imgAlt: "Screen mockup of a finished website",
+    imgTwo: platformImage2,
+    imgTwoAlt: "Screen mockup of a platform build",
     btnExists: true,
     btnTitle: "See my work",
     btnURL: "/portfolio",
@@ -59,9 +67,11 @@ const articles: Article[] = [
     title: "A look that carries across everything",
     subTitle:
       "Your website is just one piece of the puzzle. I can create design systems, colour palettes, typography, and brand guidelines that work across every touchpoint.",
-    single: true,
+    single: false,
     imgOne: brandingImage,
-    imgOneAlt: "Branding and identity design work",
+    imgOneAlt: "Healthscope branded event promotion design",
+    imgTwo: brandingImage2,
+    imgTwoAlt: "Brand identity mockups",
     icon: "M9 11h2v2H9zm4 0h2v2h-2zM7 7h10v2H7zM5 9h2v6H5zm2 6h10v2H7zm10-6h2v6h-2zm-6-4h2v2h-2zM4 2h4v2H4zm0 18h4v2H4zM16 2h4v2h-4zm0 18h4v2h-4zM2 4h2v4H2zm0 12h2v4H2zM20 4h2v4h-2zm0 12h2v4h-2z",
   },
   {
@@ -78,9 +88,11 @@ const articles: Article[] = [
     title: "White-label support for agencies and studios",
     subTitle:
       "Design and development support for creative and digital agencies, from Figma-to-code work through to overflow production projects.",
-    single: true,
+    single: false,
     imgOne: whiteLabelImage,
-    imgOneAlt: "White-label agency project work",
+    imgOneAlt: "Healthscope campaign design library in Figma",
+    imgTwo: whiteLabelImage2,
+    imgTwoAlt: "Healthscope campaign templates in Figma",
     btnExists: true,
     btnTitle: "Get in touch",
     btnURL: "/contact",
@@ -152,6 +164,8 @@ const pageDescription: string =
           subTitle={article.subTitle}
           img={article.img}
           imgAlt={article.imgAlt}
+          imgTwo={article.imgTwo}
+          imgTwoAlt={article.imgTwoAlt}
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}

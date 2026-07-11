@@ -4,8 +4,18 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 // Destructure the props passed to the Astro component
-const { title, subTitle, btnExists, btnTitle, btnURL, img, imgAlt, icon } =
-  Astro.props;
+const {
+  title,
+  subTitle,
+  btnExists,
+  btnTitle,
+  btnURL,
+  img,
+  imgAlt,
+  imgTwo,
+  imgTwoAlt,
+  icon,
+} = Astro.props;
 // Define TypeScript interface for props
 interface Props {
   title: string;
@@ -15,6 +25,8 @@ interface Props {
   btnURL?: string;
   img: any;
   imgAlt: any;
+  imgTwo?: any;
+  imgTwoAlt?: any;
   icon?: string | string[];
 }
 ---
@@ -23,14 +35,35 @@ interface Props {
 <section
   class="mx-auto flex max-w-[85rem] flex-col items-center gap-8 px-4 py-8 sm:px-6 sm:py-12 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 lg:px-8 lg:py-10 xl:gap-16 2xl:max-w-full"
 >
-  <!-- The Image component which renders the image. Ordered after the text on mobile so text always leads, matching RightSection. -->
-  <Image
-    class="aspect-4/3 order-2 w-full rounded-xl object-cover md:order-1"
-    src={img}
-    alt={imgAlt}
-    draggable={"false"}
-    format={"avif"}
-  />
+  <!-- The image block. Ordered after the text on mobile so text always leads, matching RightSection. Renders a single image, or two side by side if imgTwo is supplied. -->
+  {
+    imgTwo ? (
+      <div class="order-2 grid grid-cols-2 gap-4 md:order-1">
+        <Image
+          class="aspect-4/3 w-full rounded-xl object-cover"
+          src={img}
+          alt={imgAlt}
+          draggable={"false"}
+          format={"avif"}
+        />
+        <Image
+          class="aspect-4/3 mt-4 w-full rounded-xl object-cover lg:mt-10"
+          src={imgTwo}
+          alt={imgTwoAlt}
+          draggable={"false"}
+          format={"avif"}
+        />
+      </div>
+    ) : (
+      <Image
+        class="aspect-4/3 order-2 w-full rounded-xl object-cover md:order-1"
+        src={img}
+        alt={imgAlt}
+        draggable={"false"}
+        format={"avif"}
+      />
+    )
+  }
   <!-- The container for title, subtitle, and optional CTA button -->
   <div class="order-1 mt-4 md:order-2 md:mt-0">
     <!-- The title of the section -->
