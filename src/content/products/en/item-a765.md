@@ -32,22 +32,15 @@ descriptionList:
   - title: "Convenience"
     subTitle: "Eliminates the need for multiple trips to the hardware store, saving time and effort on your projects."
 specificationsLeft:
-  - title: "Material"
-    subTitle: "Constructed from high-quality materials such as stainless steel, ensuring durability and corrosion resistance."
-  - title: "Assortment"
-    subTitle: "Contains a generous assortment of screws, including wood screws, machine screws, and sheet metal screws."
-  - title: "Quantity"
-    subTitle: "Each set includes a sufficient quantity of screws to handle a wide range of projects and tasks."
-  - title: "Sizes"
-    subTitle: "Available in various sizes to suit different project requirements, ensuring compatibility and versatility."
-tableData:
-  - feature: ["Specification", "Value"]
-    description:
-      - ["Length (mm)", "Various"]
-      - ["Weight (g)", "N/A"]
-      - ["Material", "Stainless Steel"]
-      - ["Finish", "Assorted"]
-      - ["Package Contents", "Various screws in a set"]
+  - title: "Software"
+    subTitle: "Figma"
+  - title: "Service"
+    subTitle: "Web Design"
+specificationsRight:
+  - title: "Client name"
+    subTitle: "Toyota"
+  - title: "Creative Field"
+    subTitle: "Art Direction, Web Development"
 blueprints:
   first: "@/images/blueprint-1.avif"
   second: "@/images/blueprint-2.avif"
