@@ -7,9 +7,11 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 
 // Import necessary images
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import dashboardImage from "@images/dashboard-image.avif";
+import designImage from "@images/services-design.jpg";
+import platformImage from "@images/services-platform.jpg";
+import brandingImage from "@images/services-branding.jpg";
+import supportImage from "@images/services-support.jpg";
+import whiteLabelImage from "@images/services-white-label.jpg";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -34,20 +36,18 @@ const articles: Article[] = [
     isRightSection: true,
     title: "Design you can see before it's built",
     subTitle:
-      "Every project starts in Figma. You'll see full designs of your site — and can click through a working prototype — before I write a single line of code. That means feedback happens early, when changes are quick and cheap, not after everything's been built. By the time development starts, there are no surprises left.",
-    single: false,
-    imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
-    imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
+      "Every project starts in Figma. You will see full designs before a single line of code is written.",
+    single: true,
+    imgOne: designImage,
+    imgOneAlt: "Design work in progress",
     icon: "M4 16H6V18H8V20H10V22H2V14H4V16ZM12 20H10V18H12V20ZM14 18H12V16H14V18ZM10 16H8V14H10V16ZM16 16H14V14H16V16ZM6 14H4V12H6V14ZM12 14H10V12H12V14ZM18 14H16V12H18V14ZM8 12H6V10H8V12ZM14 12H12V10H14V12ZM20 12H18V10H20V12ZM10 10H8V8H10V10ZM18 10H16V8H18V10ZM22 10H20V8H22V10ZM12 8H10V6H12V8ZM16 8H14V6H16V8ZM20 8H18V6H20V8ZM14 6H12V4H14V6ZM18 6H16V4H18V6ZM16 4H14V2H16V4Z",
   },
   {
     isRightSection: false,
     title: "Built on the right platform for you",
     subTitle:
-      "Once the design's approved, I build it — on WordPress if you want to manage content yourself, or a modern lightweight setup if speed and low maintenance matter more. That choice depends on how you'll actually use the site, and it's a conversation we have before anything starts. Either way, the site is fast, works properly on phones, and belongs entirely to you.",
-    img: dashboardImage,
+      "WordPress if you want to manage content yourself, or a modern lightweight setup for speed and low maintenance.",
+    img: platformImage,
     imgAlt: "Screen mockup of a finished website",
     btnExists: true,
     btnTitle: "See my work",
@@ -58,18 +58,18 @@ const articles: Article[] = [
     isRightSection: true,
     title: "A look that carries across everything",
     subTitle:
-      "Your website is one piece of a bigger picture. I design logos, colour palettes, and brand guidelines that work everywhere your business shows up — the site, your socials, your signage, your invoices. If you already have a brand, I'll work within it. If you don't, we can build one that suits the business you actually run.",
+      "Your website is just one piece of the puzzle. I can create design systems, colour palettes, typography, and brand guidelines that work across every touchpoint.",
     single: true,
-    imgOne: dashboardImage,
-    imgOneAlt: "Screen mockup of a designed website",
+    imgOne: brandingImage,
+    imgOneAlt: "Branding and identity design work",
     icon: "M9 11h2v2H9zm4 0h2v2h-2zM7 7h10v2H7zM5 9h2v6H5zm2 6h10v2H7zm10-6h2v6h-2zm-6-4h2v2h-2zM4 2h4v2H4zm0 18h4v2H4zM16 2h4v2h-4zm0 18h4v2h-4zM2 4h2v4H2zm0 12h2v4H2zM20 4h2v4h-2zm0 12h2v4h-2z",
   },
   {
     isRightSection: false,
     title: "Support that doesn't end at launch",
     subTitle:
-      "Websites need occasional attention — updates, small changes, the odd thing that breaks. Every project includes a handover so you can manage the basics yourself, plus a few weeks of post-launch support. If you'd rather not touch it at all, I offer a monthly retainer: set fee, no lock-in contracts, and things get faster over time as I get to know your business.",
-    img: personWorking,
+      "Updates, improvements, fixes, and ongoing assistance after launch.",
+    img: supportImage,
     imgAlt: "Person working at a desk",
     icon: "M13 16h2v4h2v2H7v-2h2v-4h2v-2h2v2Zm-6 4H5v-2h2v2Zm12 0h-2v-2h2v2ZM5 18H3v-8h2v8Zm16 0h-2v-6h2v6Zm-6-6h-2v-2h2v2Zm4 0h-2v-2h2v2ZM7 10H5V8h2v2Zm6 0h-2V6h2v4Zm4 0h-2V8h2v2ZM9 8H7V6h2v2Zm2-2H9V2h2v4Z",
   },
@@ -77,12 +77,10 @@ const articles: Article[] = [
     isRightSection: true,
     title: "White-label support for agencies and studios",
     subTitle:
-      "I also work as an external designer and developer for creative and digital agencies — Figma-to-code builds, front-end development, or overflow capacity when the workload spikes. I've spent years embedded in agency workflows, including at Young & Rubicam, so I'm comfortable with your tools, your processes, and your client deadlines. Your clients deal with you; I make you look good.",
-    single: false,
-    imgOne: blueprints,
-    imgOneAlt: "Wireframes and project planning documents",
-    imgTwo: dashboardImage,
-    imgTwoAlt: "Screen mockup representing agency handoff work",
+      "Design and development support for creative and digital agencies, from Figma-to-code work through to overflow production projects.",
+    single: true,
+    imgOne: whiteLabelImage,
+    imgOneAlt: "White-label agency project work",
     btnExists: true,
     btnTitle: "Get in touch",
     btnURL: "/contact",
@@ -118,7 +116,7 @@ const pageDescription: string =
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
     title="What I can do for your business"
-    subTitle="Every project is different, but the approach is the same: understand what your business actually needs, design it properly, build it well, and stay available afterwards. Here's what that covers."
+    subTitle="Every project is different, but the approach is always the same. I figure out what your business needs, design it properly, build it well, and stay available afterwards."
     icon="M3 23H1v-2h2v2Zm10 0h-2v-3h2v3Zm10 0h-2v-2h2v2ZM5 21H3v-2h2v2Zm16 0h-2v-2h2v2Zm-9-5h4v2H8v-2h2v-2h2v2Zm-4 0H6V8h2v8Zm10 0h-2v-4h-2v-2h2V8h2v8Zm-4-2h-2v-2h2v2ZM4 13H1v-2h3v2Zm19 0h-3v-2h3v2Zm-12-2H9V9h2v2Zm5-3H8V6h8v2ZM5 5H3V3h2v2Zm16 0h-2V3h2v2Zm-8-1h-2V1h2v3ZM3 3H1V1h2v2Zm20 0h-2V1h2v2Z"
     btnExists={true}
     btnTitle="Book a call"
@@ -165,7 +163,7 @@ const pageDescription: string =
   <!--Closing CTA-->
   <HeroSectionAlt
     title="Not sure which of these you need?"
-    subTitle="That's normal — most people aren't sure until we talk it through. Book a call, tell me what's going on with your business, and I'll tell you what I'd do."
+    subTitle="Book a call and we will talk it through."
     btnTitle="Book a call"
     url="/contact"
   />

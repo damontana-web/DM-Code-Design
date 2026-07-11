@@ -8,8 +8,10 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 import { SITE } from "@data/constants";
 
-import personWorking from "@images/person-working.avif";
-import dashboardImage from "@images/dashboard-image.avif";
+import designerImage from "@images/about-designer.jpg";
+import agencyImage from "@images/about-agency.jpg";
+import ownImage from "@images/about-own.jpg";
+import forYouImage from "@images/about-for-you.jpg";
 
 const pageTitle: string = "About | DaMontana Design + Code, Melbourne";
 const pageDescription: string =
@@ -38,16 +40,16 @@ const pageDescription: string =
   <!-- Hero -->
   <MainSection
     title="About"
-    subTitle="I'm David Montana — a designer and developer in Melbourne. I've spent 15 years building websites and brands, first inside big agencies, then independently as DaMontana. Here's the short version of how I got here and how I work."
+    subTitle="I'm David Montana, a designer and developer in Melbourne. I've spent the last 15 years building websites and brands, first inside agencies, and then on my own as DaMontana."
     icon="M8 20h6v2H6v-2H4v-2h4v2Zm12-2h2v2h-2v2h-2v-2h-2v-2h2v-2h2v2ZM4 18H2V6h2v12Zm10 0H8v-2h6v2Zm0-4h-4v-2h4v2Zm8 0h-2V6h2v8Zm-12-2H8V8h2v4Zm6 0h-2V8h2v4Zm-2-4h-4V6h4v2ZM6 6H4V4h2v2Zm14 0h-2V4h2v2Zm-2-2H6V2h12v2Z"
   />
 
   <!-- Section 1 — Trained as a designer first -->
   <RightSection
     title="Trained as a designer first"
-    subTitle="I studied Graphic Design, specialising in illustration and digital marketing — which is a long way of saying I learned to think about how things look, how they persuade, and how they work, all at once. The code came later, and it came from necessity: I kept designing things and wanting them built properly."
+    subTitle="I studied Graphic Design, specialising in illustration and digital marketing. That background taught me how design works, how people respond to it, and how to communicate clearly."
     single={true}
-    imgOne={personWorking}
+    imgOne={designerImage}
     imgOneAlt="Person working at a desk"
     icon="M8 20h6v-2h2v2h4v2H4v-2h2v-2h2v2Zm-4 0H2V4h2v16Zm18 0h-2v-4h-2v-2h2V4h2v16Zm-12-2H8v-2h2v2Zm4 0h-2v-2h2v2Zm-2-2h-2v-2h2v2Zm4 0h-2v-2h2v2Zm2-2h-2v-2h2v2Zm-8-2H8v-2h2v2Zm-2-2H6V8h2v2Zm4 0h-2V8h2v2Zm-2-2H8V6h2v2Zm10-4H4V2h16v2Z"
   />
@@ -55,8 +57,8 @@ const pageDescription: string =
   <!-- Section 2 — The agency years -->
   <LeftSection
     title="The agency years"
-    subTitle="Early in my career I worked inside advertising and creative agencies, including Young & Rubicam — one of the biggest names in the industry. Agency work teaches you two things fast: how to deliver at a professional standard under real deadlines, and how big-brand thinking actually works. Along the way, my work picked up awards at Cannes Lions (Young Lions competition) and FIAP, the Ibero-American advertising festival."
-    img={dashboardImage}
+    subTitle="Early on, I worked inside advertising and creative agencies, including Young & Rubicam. The agency world taught me professional standards, how to meet deadlines, and how to deliver big projects."
+    img={agencyImage}
     imgAlt="Screen mockup representing creative work"
     icon="M15 22H9v-6h6v6Zm-4-2h2v-2h-2v2Zm-2-4H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 14H5V8h2v6Zm12 0h-2V8h2v6ZM3 12H0v-2h3v2Zm21 0h-3v-2h3v2ZM9 8H7V6h2v2Zm8 0h-2V6h2v2ZM5 6H3V4h2v2Zm10 0H9V4h6v2Zm6 0h-2V4h2v2ZM3 4H1V2h2v2Zm20 0h-2V2h2v2ZM13 3h-2V0h2v3Z"
   />
@@ -64,9 +66,9 @@ const pageDescription: string =
   <!-- Section 3 — Then I went out on my own -->
   <RightSection
     title="Then I went out on my own"
-    subTitle="For the past 15 years I've worked independently as DaMontana, mostly with small and medium businesses — real estate agencies, clinics, suppliers, local companies. It turns out the thing I like most isn't big-brand campaigns. It's taking that agency-level standard and applying it where it's rare: businesses that usually can't get it without paying agency prices or dealing with agency layers. I still work with agencies too — as an external designer and developer when their workload spikes — so I keep a foot in both worlds. Your project gets the discipline of one and the directness of the other."
+    subTitle="For the past 15 years, I've worked independently with small and medium businesses, real estate agencies, healthcare providers, suppliers, local companies, and startups."
     single={true}
-    imgOne={personWorking}
+    imgOne={ownImage}
     imgOneAlt="Person working independently at a desk"
     icon="M17 9h-2v13h-2v-6h-2v6H9V9H7V7h10v2Zm-6 5h2V9h-2v5ZM7 7H5V5h2v2Zm12 0h-2V5h2v2Zm-5-1h-4V2h4v4ZM5 5H3V3h2v2Zm16 0h-2V3h2v2Z"
   />
@@ -74,8 +76,8 @@ const pageDescription: string =
   <!-- Section 4 — What that means for you -->
   <LeftSection
     title="What that means for you"
-    subTitle="Everything on this site comes from those years: design in Figma first so you see it before it's built, code it myself so nothing gets lost in handover, explain everything in plain English because most of my clients aren't web people — and shouldn't have to be."
-    img={dashboardImage}
+    subTitle="Everything on this site comes from those years of experience. I design in Figma so you can review before it's built, I write code that travels well, and I explain everything in plain English."
+    img={forYouImage}
     imgAlt="Screen mockup representing a finished website"
     icon="M20 22H4v-2h16v2ZM4 20H2V4h2v16ZM18 4h-2v2h2V4h2v2h2v14h-2V8h-6V4H4V2h14v2Zm-4 14h-4v-2h4v2Zm-4-2H8v-2h2v2Zm6 0h-2v-2h2v2Zm-6-4H8v-2h2v2Zm6 0h-2v-2h2v2Z"
     btnExists={true}
@@ -105,10 +107,7 @@ const pageDescription: string =
           />
           <p class="text-xl font-bold text-gray-700">Cannes Lions</p>
           <p class="text-neutral-600 dark:text-neutral-400">
-            Young Lions competition
-          </p>
-          <p class="text-neutral-600 dark:text-neutral-400">
-            Absolut Vodka
+            Young Lions Competition
           </p>
         </div>
         <div>
@@ -122,23 +121,20 @@ const pageDescription: string =
           <p class="text-neutral-600 dark:text-neutral-400">
             Young Creatives Awards
           </p>
-          <p class="text-neutral-600 dark:text-neutral-400">
-            MTV Networks
-          </p>
         </div>
       </div>
     </div>
 
     <p class="mx-auto mt-8 max-w-3xl text-pretty italic text-neutral-600 dark:text-neutral-400">
-      When I'm not building websites, I'm usually painting or behind a
-      camera — the design eye doesn't switch off.
+      When I'm not building websites, you'll usually find me painting or
+      behind a camera. The design eye doesn't really switch off.
     </p>
   </section>
 
   <!-- Closing CTA -->
   <HeroSectionAlt
     title="Working on something?"
-    subTitle="Tell me about your business and what you're trying to do — I'll give you an honest read on how I'd approach it."
+    subTitle="Tell me about your business and what you are trying to do. I will give you an honest read on how I would approach it."
     btnTitle="Book a call"
     url="/contact"
   />
