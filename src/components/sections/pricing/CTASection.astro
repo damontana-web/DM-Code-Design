@@ -1,6 +1,6 @@
 ---
-// Import SecondaryCTA component for use in this module
-import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+// Import PrimaryCTA component for use in this module
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 
@@ -59,6 +59,6 @@ const { pricing } = Astro.props;
       {pricing.thirdOption}
     </p>
 
-    <SecondaryCTA title={pricing.btnText} url="/contact" />
+    <PrimaryCTA title="Book a call" url="/contact" />
   </div>
 </section>

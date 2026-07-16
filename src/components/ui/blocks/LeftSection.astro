@@ -2,6 +2,7 @@
 // Import the necessary modules
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 // Destructure the props passed to the Astro component
 const {
@@ -10,6 +11,7 @@ const {
   btnExists,
   btnTitle,
   btnURL,
+  linkStyle,
   img,
   imgAlt,
   imgTwo,
@@ -23,6 +25,7 @@ interface Props {
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
+  linkStyle?: boolean;
   img: any;
   imgAlt: any;
   imgTwo?: any;
@@ -78,7 +81,15 @@ interface Props {
     >
       {subTitle}
     </p>
-    <!-- Conditionally render the Primary CTA button if btnExists is true -->
-    {btnExists ? <PrimaryCTA title={btnTitle} url={btnURL} /> : null}
+    <!-- Conditionally render the Primary CTA button, or the navy outline Secondary CTA if linkStyle is true -->
+    {
+      btnExists ? (
+        linkStyle ? (
+          <SecondaryCTA title={btnTitle} url={btnURL} />
+        ) : (
+          <PrimaryCTA title={btnTitle} url={btnURL} />
+        )
+      ) : null
+    }
   </div>
 </section>

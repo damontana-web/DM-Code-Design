@@ -2,6 +2,7 @@
 // A row of recent project cards, pulled straight from the Products collection.
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -45,12 +46,9 @@ const projects: CollectionEntry<"products">[] = (
     </div>
     {
       viewAllUrl && (
-        <a
-          class="hidden shrink-0 whitespace-nowrap text-sm font-bold text-neutral-800 underline underline-offset-4 hover:no-underline dark:text-neutral-200 sm:inline-block"
-          href={viewAllUrl}
-        >
-          See my work
-        </a>
+        <div class="hidden shrink-0 sm:block">
+          <SecondaryCTA title="See my work" url={viewAllUrl} />
+        </div>
       )
     }
   </div>
@@ -61,12 +59,9 @@ const projects: CollectionEntry<"products">[] = (
 
   {
     viewAllUrl && (
-      <a
-        class="mt-6 inline-block text-sm font-bold text-neutral-800 underline underline-offset-4 hover:no-underline dark:text-neutral-200 sm:hidden"
-        href={viewAllUrl}
-      >
-        See my work
-      </a>
+      <div class="mt-6 sm:hidden">
+        <SecondaryCTA title="See my work" url={viewAllUrl} />
+      </div>
     )
   }
 </section>

@@ -1,7 +1,6 @@
 ---
 // Import necessary modules and utilities
 import { Image } from "astro:assets";
-import { formatDate } from "@utils/utils";
 import type { CollectionEntry } from "astro:content";
 
 const { blogEntry, recentBlogLocale = "" } = Astro.props;
@@ -33,9 +32,5 @@ interface Props {
     >
       {blogEntry.data.title}
     </h3>
-    <!-- The formatted publication date of the blog post -->
-    <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-      {formatDate(blogEntry.data.pubDate)}
-    </p>
   </div></a
 >
