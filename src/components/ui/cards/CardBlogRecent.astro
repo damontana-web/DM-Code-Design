@@ -32,7 +32,7 @@ interface Props {
   <div class="sm:order-1">
     <!-- Blog title which is also a hyperlink to the blog detail page  -->
     <h2
-      class="text-balance text-2xl tracking-tight text-gray-700 md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
+      class="text-balance text-xl tracking-tight text-gray-700 md:text-2xl lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight"
     >
       <a
         class="outline-hidden ring-zinc-500 transition duration-300 hover:text-[#C71D7F] focus-visible:ring-3 dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-hidden"
@@ -41,24 +41,27 @@ interface Props {
         {blogEntry.data.description}
       </a>
     </h2>
-    <!-- Container for the author's avatar and metadata -->
-    <div class="mt-6 flex items-center sm:mt-10">
-      <AvatarBlogLarge blogEntry={blogEntry} />
-
-      <div class="ms-3 sm:ms-4">
-        <p class="font-bold text-neutral-800 dark:text-neutral-200 sm:mb-1">
-          {blogEntry.data.author}
-        </p>
-        <p class="text-xs text-neutral-500">
-          {blogEntry.data.role}
-        </p>
+    <!-- Author info -->
+    <div class="mt-6 space-y-6 sm:mt-10">
+      <div class="flex items-center gap-x-3">
+        <AvatarBlogLarge blogEntry={blogEntry} />
+        <div>
+          <span class="block text-[16px] font-normal text-neutral-700 dark:text-neutral-300">
+            {blogEntry.data.author}
+          </span>
+          <p class="text-xs text-neutral-500 dark:text-neutral-400">
+            Creative Designer | Web Developer
+          </p>
+        </div>
       </div>
+
+      <div class="h-px w-full bg-neutral-300 dark:bg-neutral-700"></div>
     </div>
-    <!-- Read More button which is a link to the blog post detailed page -->
+    <!-- Book a call button linking to the contact page -->
     <div class="mt-5">
       <PrimaryCTA
-        url={recentBlogLocale && recentBlogLocale !== "en" ? `/${recentBlogLocale}/blog/${blogEntry.id.replace(/^fr\//, '')}/` : `/blog/${blogEntry.id.replace(/^en\//, '')}/`}
-        title="Read More"
+        url={recentBlogLocale && recentBlogLocale !== "en" ? `/${recentBlogLocale}/contact/` : "/contact"}
+        title="Book a call"
         data-astro-prefetch
       />
     </div>

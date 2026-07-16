@@ -2,7 +2,6 @@
 // Import necessary components and utilities
 import AvatarBlog from "@components/ui/avatars/AvatarBlog.astro";
 import { Image } from "astro:assets";
-import { formatDate } from "@utils/utils";
 import type { CollectionEntry } from "astro:content";
 
 const { blogEntry, blogLocale = "" } = Astro.props;
@@ -44,11 +43,11 @@ interface Props {
         <AvatarBlog blogEntry={blogEntry} />
 
         <div class="ms-2.5 sm:ms-4">
-          <h4 class="font-normal text-neutral-50">
+          <h4 class="text-[16px] font-normal text-neutral-50">
             {blogEntry.data.author}
           </h4>
           <p class="text-xs text-neutral-50/[.8]">
-            {formatDate(blogEntry.data.pubDate)}
+            {blogEntry.data.readTime} min read
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 ---
 title: "What Happens After Your Website Goes Live"
-description: "Launch day isn't the finish line — here's what support actually looks like afterwards"
+description: "I genuinely care about the work I do for healthcare clients. There's a real sense of purpose in helping them connect with the people who need them."
 author: "David Montana"
 role: "Designer + Developer"
 authorImage: "@/images/blog/david-montana-headshot.jpg"

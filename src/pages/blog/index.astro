@@ -3,7 +3,6 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
 import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -15,27 +14,20 @@ const englishBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("en/");
 });
 
-const englishInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("en/");
-});
-
 const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-// Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
 
 // Separate the most recent post from others
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> | undefined = blogPosts[0];
-const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
+const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1, 6);
 
 // Define variables for page content
 const title: string = "Notes on websites and design";
 const subTitle: string =
   "Plain-English articles for business owners. What websites actually cost, what's worth paying for, and what you can safely ignore. No jargon, no sales pitch.";
-const secondTitle: string = "More articles";
 
 const pageTitle: string = "Notes on Websites & Design | DaMontana";
 const pageDescription: string =
@@ -100,23 +92,4 @@ const pageDescription: string =
       </section>
     )
   }
-  <!--Insights section-->
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-4xl leading-tight text-gray-700"
-      >
-        {secondTitle}
-      </h2>
-    </div>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} />
-        ))
-      }
-    </div>
-  </section>
 </MainLayout>

@@ -5,7 +5,7 @@ import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import { Image } from "astro:assets";
-import { capitalize, formatDate } from "@utils/utils";
+import { capitalize } from "@utils/utils";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -104,21 +104,12 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
             <div class="flex items-center gap-x-3">
               <AvatarBlogLarge blogEntry={post} />
               <div>
-                <span class="font-bold text-neutral-700 dark:text-neutral-300">
+                <span class="block text-[16px] font-normal text-neutral-700 dark:text-neutral-300">
                   {post.data.author}
                 </span>
-                <ul class="text-xs text-neutral-500">
-                  <li
-                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
-                  >
-                    {formatDate(post.data.pubDate)}
-                  </li>
-                  <li
-                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
-                  >
-                    {post.data.readTime} min read
-                  </li>
-                </ul>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400">
+                  Creative Designer | Web Developer
+                </p>
               </div>
             </div>
 
