@@ -48,7 +48,9 @@ Standard Tailwind `neutral`, `gray`, `zinc` scales are defined in the theme (`--
 
 ## 2. Typography
 
-**Font:** Plus Jakarta Sans (variable, weights 100–900), loaded via `@font-face`. Body default weight 400; all `h1`–`h6` default to weight `500`.
+**Headings:** `'Bricolage Grotesque'` — loaded via Google Fonts `@import` in `global.css`, applied to `h1`–`h6` in `@layer base`. `h1`, `h5`, `h6` default to weight `500`; `h2`, `h3`, `h4` default to weight `400`.
+
+**Body:** `'Plus Jakarta Sans', sans-serif` (variable, weights 100–900), self-hosted via `@font-face`. Default weight 400.
 
 ### Standard page/section title recipe
 
@@ -106,6 +108,8 @@ Homepage sections typically use more generous `py-30` (larger, more breathing ro
 ---
 
 ## 4. Icons
+
+**Icon source:** [Pixelarticons](https://pixelarticons.com/) — pixelated-art style icon set. SVG paths are copied into components directly (no external runtime dependency).
 
 All custom inline icons use a single shared component: **`src/components/ui/icons/HeadingIcon.astro`**
 
