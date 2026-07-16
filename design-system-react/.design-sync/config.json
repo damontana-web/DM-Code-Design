@@ -1,0 +1,13 @@
+{
+  "projectId": "127e0872-92df-49a6-acab-a231bf28bde5",
+  "pkg": "@damontana/design-system-react",
+  "globalName": "DaMontana",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "cssEntry": "dist/styles.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "AnnouncementBanner": { "cardMode": "single", "viewport": "600x300" },
+    "Card": { "cardMode": "column" }
+  }
+}
