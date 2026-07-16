@@ -12,17 +12,14 @@ tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Description"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Specifications"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
+    title: "WIP/Sketches"
 longDescription:
   title: "Versatile Screw Fastening Solutions"
   subTitle: |
     The SF-AB A765 Assorted Screw Set offers unmatched versatility and convenience, making it the perfect choice for DIY enthusiasts and professionals alike. With a comprehensive selection of screws, you'll always have the right fastener for the job.
-  btnTitle: "Contact sales to learn more"
+  btnTitle: "Book a call"
   btnURL: "#"
 descriptionList:
   - title: "Wide Variety"

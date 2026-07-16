@@ -6,6 +6,10 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
+import dashboardImage from "@/images/dashboard-image.avif";
+import blueprintsImage from "@/images/blueprints-image.avif";
+import blueprintTwoImage from "@/images/blueprint-2.avif";
+import personWorkingImage from "@/images/person-working.avif";
 
 // This gets the static paths for all the unique products
 
@@ -33,7 +37,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
   >
     <div class="mx-auto mt-10 max-w-3xl text-center">
       <h1
-        class="mb-4 text-balance text-2xl tracking-tight text-gray-700 md:text-4xl md:leading-tight"
+        class="mb-4 text-balance text-[42px] font-light tracking-tight text-gray-700"
       >
         {product.data.title}
       </h1>
@@ -41,41 +45,33 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         {product.data.description}
       </p>
     </div>
-    <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
-      <!--Project image gallery-->
-      <div class="grid grid-cols-2 gap-4 md:pt-8">
-        <Image
-          src={product.data.main.imgMain}
-          class="aspect-4/3 w-full rounded-lg object-cover"
-          alt={product.data.main.imgAlt}
-          format={"avif"}
-          loading={"eager"}
-        />
-        <Image
-          src={product.data.main.imgMain}
-          class="aspect-4/3 w-full rounded-lg object-cover"
-          alt={product.data.main.imgAlt}
-          format={"avif"}
-        />
-        <Image
-          src={product.data.main.imgMain}
-          class="aspect-4/3 w-full rounded-lg object-cover"
-          alt={product.data.main.imgAlt}
-          format={"avif"}
-        />
-        <Image
-          src={product.data.main.imgMain}
-          class="aspect-4/3 w-full rounded-lg object-cover"
-          alt={product.data.main.imgAlt}
-          format={"avif"}
-        />
-      </div>
-      <!--Intro content-->
-      <div class="md:pt-8">
-        <p class="text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl">
-          {product.data.main.content}
-        </p>
-      </div>
+    <!--Project image gallery: 2 columns, 2 rows-->
+    <div class="grid grid-cols-2 gap-4">
+      <Image
+        src={dashboardImage}
+        class="aspect-4/3 w-full rounded-lg object-cover"
+        alt={product.data.main.imgAlt}
+        format={"avif"}
+        loading={"eager"}
+      />
+      <Image
+        src={blueprintsImage}
+        class="aspect-4/3 w-full rounded-lg object-cover"
+        alt={product.data.main.imgAlt}
+        format={"avif"}
+      />
+      <Image
+        src={blueprintTwoImage}
+        class="aspect-4/3 w-full rounded-lg object-cover"
+        alt={product.data.main.imgAlt}
+        format={"avif"}
+      />
+      <Image
+        src={personWorkingImage}
+        class="aspect-4/3 w-full rounded-lg object-cover"
+        alt={product.data.main.imgAlt}
+        format={"avif"}
+      />
     </div>
   </section>
 
@@ -102,15 +98,18 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
           <div class="grid gap-12 md:grid-cols-2">
             <div class="lg:w-3/4">
-              <h2
-                class="text-balance text-3xl tracking-tight text-gray-700 md:leading-tight lg:text-4xl"
-              >
+              <h3 class="text-neutral-700 dark:text-neutral-300">
                 {product.data.longDescription.title}
-              </h2>
+              </h3>
               <p
                 class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
               >
                 {product.data.longDescription.subTitle}
+              </p>
+              <p
+                class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
+              >
+                {product.data.main.content}
               </p>
               <p class="mt-5">
                 <PrimaryCTA
@@ -120,102 +119,28 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
               </p>
             </div>
 
-            <div class="space-y-6 lg:space-y-10">
-              {
-                product.data.descriptionList.map((list) => (
-                  <div class="flex">
-                    <div>
-                      <h3 class="text-base text-gray-700 sm:text-lg">
-                        {list.title}
-                      </h3>
-                      <p class="mt-1 text-neutral-600 dark:text-neutral-400">
-                        {list.subTitle}
-                      </p>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tabs-with-card-2" class="hidden" role="tabpanel">
-        <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
-          <div class="grid w-full grid-cols-1 gap-x-16 md:grid-cols-2">
-            <div class="max-w-md space-y-6">
-              {
-                product.data.specificationsLeft.map((spec) => (
-                  <div>
-                    <h3 class="block text-gray-700">
-                      {spec.title}
-                    </h3>
-                    <p class="text-neutral-600 dark:text-neutral-400">
-                      {spec.subTitle}
-                    </p>
-                  </div>
-                ))
-              }
-            </div>
-            {
-              product.data.specificationsRight ? (
-                <div class="mt-6 max-w-md space-y-6 md:ml-auto md:mt-0">
-                  {product.data.specificationsRight?.map((spec) => (
-                    <div>
-                      <h3 class="block font-bold text-gray-700">
+            <div class="max-w-md">
+              <h3 class="text-xl font-normal text-gray-700">
+                Project details
+              </h3>
+              <div class="mt-4 divide-y divide-neutral-300 dark:divide-neutral-700">
+                {
+                  [
+                    ...product.data.specificationsLeft,
+                    ...(product.data.specificationsRight ?? []),
+                  ].map((spec) => (
+                    <div class="flex items-center justify-between py-3 first:pt-0">
+                      <span class="text-sm text-neutral-500 dark:text-neutral-400">
                         {spec.title}
-                      </h3>
-                      <p class="text-neutral-600 dark:text-neutral-400">
+                      </span>
+                      <span class="text-sm font-medium text-gray-700 dark:text-neutral-300">
                         {spec.subTitle}
-                      </p>
+                      </span>
                     </div>
-                  ))}
-                </div>
-              ) : product.data.tableData ? (
-                <div class="mt-6 space-y-6 md:ml-auto md:mt-0">
-                  <div class="flex flex-col">
-                    <div class="-m-1.5 overflow-x-auto">
-                      <div class="inline-block min-w-full p-1.5 align-middle">
-                        <div class="overflow-hidden">
-                          <table class="min-w-full divide-y divide-neutral-300 dark:divide-neutral-700">
-                            <thead>
-                              <tr>
-                                {product.data.tableData?.[0]?.feature?.map(
-                                  (header) => (
-                                    <th
-                                      scope="col"
-                                      class="px-6 py-3 text-start text-xs font-medium uppercase text-neutral-500 dark:text-neutral-500"
-                                    >
-                                      {header}
-                                    </th>
-                                  )
-                                )}
-                              </tr>
-                            </thead>
-                            <tbody class="divide-y divide-neutral-300 dark:divide-neutral-700">
-                              {product.data.tableData?.map((row) =>
-                                // Wrap each row's content in a separate <tr> element
-                                row.description.map((rowData) => (
-                                  <tr>
-                                    {/* Iterate through each cell value in the row's description array */}
-                                    {rowData.map((cellValue) => (
-                                      // Render each cell value in its own <td> element
-                                      <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                                        {cellValue}
-                                      </td>
-                                    ))}
-                                  </tr>
-                                ))
-                              )}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : null
-            }
+                  ))
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>

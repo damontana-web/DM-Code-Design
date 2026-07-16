@@ -12,17 +12,14 @@ tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Description"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Specifications"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
+    title: "WIP/Sketches"
 longDescription:
   title: "Precision Fastening Solutions"
   subTitle: |
     The SF-TB T845 Machine Screws offer unparalleled precision and reliability for industrial applications, ensuring seamless operation and longevity for your machinery and equipment.
-  btnTitle: "Contact sales to learn more"
+  btnTitle: "Book a call"
   btnURL: "#"
 descriptionList:
   - title: "Durability"

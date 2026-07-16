@@ -3,10 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
-import Bookmark from "@components/ui/buttons/Bookmark.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
-import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
 import { Image } from "astro:assets";
 import { capitalize, formatDate } from "@utils/utils";
 import { getCollection, render } from "astro:content";
@@ -54,7 +51,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
       <!--Title + lead, centered across both columns-->
       <div class="mx-auto mt-10 max-w-3xl text-center">
         <h1
-          class="mb-4 text-balance text-2xl text-gray-700 md:text-4xl md:leading-tight"
+          class="mb-4 text-balance text-[42px] font-light text-gray-700"
         >
           {post.data.title}
         </h1>
@@ -96,7 +93,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
             </p>
             <div id="toc">
               <ul
-                class="space-y-2 text-pretty text-base text-neutral-700 transition duration-300 dark:text-neutral-400"
+                class="space-y-2 text-pretty text-[21px] font-medium text-gray-700 transition duration-300"
               >
               </ul>
             </div>
@@ -139,18 +136,6 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
                 ))
               }
             </div>
-
-            <!--Bookmark and Share buttons-->
-            <div class="flex items-center gap-x-1.5">
-              <Bookmark />
-              <div
-                class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
-              >
-              </div>
-              <div class="inline-flex">
-                <SocialShare pageTitle={post.data.title} />
-              </div>
-            </div>
           </div>
         </div>
 
@@ -162,16 +147,14 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
             <Content />
           </article>
 
-          <!--Contact CTA linking the post's closing line to a real /contact link-->
-          <div class="mt-8">
-            <PrimaryCTA url="/contact" title="Get in touch" />
-          </div>
+          <div class="mt-8 h-px w-full bg-neutral-300 dark:bg-neutral-700"></div>
 
-          <PostFeedback
-            title="Was this post helpful?"
-            firstChoice="Yes"
-            secondChoice="No"
-          />
+          <div class="mt-6 inline-flex">
+            <SocialShare
+              pageTitle={post.data.title}
+              title="Share this article with a mate"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -180,11 +163,9 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
   <!--Related articles section-->
   <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mb-10 max-w-2xl">
-      <h2
-        class="text-balance text-2xl text-gray-700 md:text-4xl md:leading-tight"
-      >
+      <h3 class="text-neutral-700 dark:text-neutral-300">
         Related articles
-      </h2>
+      </h3>
     </div>
 
     <div class="grid grid-cols-2 gap-6">
@@ -207,24 +188,12 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
   article h4,
   article h5,
   article h6 {
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.4;
+    color: #374151;
     margin-top: 2.5rem;
     scroll-margin-top: 3rem;
-  }
-
-  article h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  article h3 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  article h4 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 
   article p {
@@ -314,7 +283,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
   });
 
   const SVG_HTML_STRING =
-    '<svg class="w-0 h-0 flex-none" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fa5a15"><path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></svg>';
+    '<svg class="w-0 h-0 flex-none" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EA2295"><path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></svg>';
 
   function setActiveLinkById(id: string | null) {
     const listItems = document.querySelectorAll("#toc li");

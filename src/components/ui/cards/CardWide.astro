@@ -13,7 +13,7 @@ interface Props {
 
 // Define classes to be used with the Image component
 const imageClass =
-  "absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110";
+  "absolute inset-0 h-full w-full object-cover object-center opacity-60 transition duration-500 group-hover:scale-110";
 ---
 
 <!-- The anchor tag is the main container for the product card. When clicked, this leads to the details of the product. -->
@@ -22,7 +22,7 @@ const imageClass =
     ? `/${productLocale}/portfolio/${product.id.replace(/^fr\//, "")}/`
     : `/portfolio/${product.id.replace(/^en\//, "")}/`}
   data-astro-prefetch
-  class="group relative flex h-48 items-end overflow-hidden rounded-lg shadow-xl outline-hidden ring-1 ring-inset ring-blue-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-3 focus-visible:ring-blue-primary dark:focus:outline-hidden md:col-span-2 md:h-80"
+  class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-[#171717] shadow-xl outline-hidden ring-1 ring-zinc-500 transition duration-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:col-span-2 md:h-80"
 >
   <!-- The product's main image -->
   <Image
@@ -32,14 +32,9 @@ const imageClass =
     class={imageClass}
     format={"avif"}
   />
-  <!-- This container includes a gradient overlay over the product's image -->
-  <div
-    class="pointer-events-none absolute inset-0 bg-linear-to-t from-blue-darkest via-transparent to-transparent opacity-70"
-  >
-  </div>
   <!-- This container includes product's subtitle and an SVG icon-->
   <span
-    class="relative mb-3 ml-4 inline-block text-sm font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110 md:ml-5 md:text-lg"
+    class="relative mb-3 ml-4 inline-block text-[clamp(1.1875rem,4vw,1.6875rem)] font-medium text-neutral-50 transition duration-500 group-hover:text-neutral-50/[.8] md:ml-5"
     >{product.data.description} <Icon name="openInNew" /></span
   >
 </a>

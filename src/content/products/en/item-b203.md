@@ -12,17 +12,14 @@ tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Description"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Specifications"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
+    title: "WIP/Sketches"
 longDescription:
   title: "Strength Meets Precision"
   subTitle: |
     The SF-BN B203 Tap Bolts and Nuts Set offers robust durability and precision for construction professionals, ensuring reliable performance in every application, from house framing to machinery assembly.
-  btnTitle: "Contact sales to learn more"
+  btnTitle: "Book a call"
   btnURL: "#"
 descriptionList:
   - title: "Corrosion Resistance"

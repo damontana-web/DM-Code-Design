@@ -1,5 +1,6 @@
 ---
 import Icon from "@components/ui/icons/Icon.astro";
+import HeadingIcon from "@components/ui/icons/HeadingIcon.astro";
 // Destructure the properties from Astro.props
 const {
   pageTitle,
@@ -45,9 +46,14 @@ const socialPlatforms: SocialPlatform[] = [
   <button
     id="hs-dropup"
     type="button"
-    class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg px-4 py-3 text-sm font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-100 hover:text-neutral-700 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:outline-hidden"
+    class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg px-4 py-3 text-[21px] font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-100 hover:text-neutral-700 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:outline-hidden"
   >
-    <Icon name="share" />
+    <HeadingIcon
+      d="M4 19h4v2H2v-8h2v6Zm8 0H8v-2h4v2Zm4-2h-4v-2h4v2Zm4-2h-4v-2h4v2Zm-10-2H4v-2h6v2Zm12 0h-2v-2h2v2ZM8 5H4v6H2V3h6v2Zm12 6h-4V9h4v2Zm-4-2h-4V7h4v2Zm-4-2H8V5h4v2Z"
+      color="#404040"
+      size="2.5rem"
+      flexAlign
+    />
 
     {title}
   </button>
