@@ -43,14 +43,14 @@ interface Props {
     imgTwo ? (
       <div class="order-2 grid grid-cols-2 gap-4 md:order-1">
         <Image
-          class="aspect-4/3 w-full rounded-xl object-cover"
+          class="h-auto w-full rounded-xl"
           src={img}
           alt={imgAlt}
           draggable={"false"}
           format={"avif"}
         />
         <Image
-          class="aspect-4/3 mt-4 w-full rounded-xl object-cover lg:mt-10"
+          class="mt-4 h-auto w-full rounded-xl lg:mt-10"
           src={imgTwo}
           alt={imgTwoAlt}
           draggable={"false"}
@@ -59,7 +59,7 @@ interface Props {
       </div>
     ) : (
       <Image
-        class="aspect-4/3 order-2 w-full rounded-xl object-cover md:order-1"
+        class="order-2 h-auto w-full rounded-xl md:order-1"
         src={img}
         alt={imgAlt}
         draggable={"false"}
