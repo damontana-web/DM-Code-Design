@@ -11,8 +11,10 @@ interface Props {
   first?: boolean;
 }
 // Define class names for the accordion and its content
-const ACCORDION_CLASS_DEFAULT = "hs-accordion pb-3 active";
-const ACCORDION_CLASS_COLLAPSED = "hs-accordion pt-6 pb-3";
+const ACCORDION_CLASS_DEFAULT =
+  "hs-accordion mb-4 border-b border-[#364153] pb-4 active";
+const ACCORDION_CLASS_COLLAPSED =
+  "hs-accordion mb-4 border-b border-[#364153] pb-4 pt-2";
 const ACCORDION_CONTENT_CLASS =
   "hs-accordion-content w-full overflow-hidden transition-[height] duration-300";
 // Helper function to return the correct class for the accordion
@@ -25,10 +27,13 @@ function getAccordionClass(first: boolean = false) {
 <div class={getAccordionClass(first)} id={id}>
   <!-- The accordion button, which toggles the expanded/collapsed state -->
   <button
-    class="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 text-balance rounded-lg pb-3 text-start font-bold text-neutral-800 outline-hidden ring-zinc-500 transition hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-200 dark:ring-zinc-200 dark:hover:text-neutral-400 dark:focus:outline-hidden md:text-lg"
+    class="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 text-balance rounded-lg pb-3 text-start font-normal text-neutral-800 outline-hidden ring-zinc-500 transition hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-200 dark:ring-zinc-200 dark:hover:text-neutral-400 dark:focus:outline-hidden md:text-lg"
     aria-controls={collapseId}
   >
-    {question}
+    <span class="flex items-center gap-3">
+      <span class="shrink-0 text-[#EA2295]" aria-hidden="true">→</span>
+      {question}
+    </span>
     <!-- SVG Icon that is shown when the accordion is NOT active -->
     <Icon name="accordionNotActive" />
 
@@ -42,7 +47,9 @@ function getAccordionClass(first: boolean = false) {
     id={collapseId}
   >
     <!-- The content paragraph -->
-    <p class="text-pretty text-neutral-600 dark:text-neutral-400">
+    <p
+      class="text-pretty text-[15.33px] font-extralight text-neutral-600 dark:text-neutral-400"
+    >
       {answer}
     </p>
   </div>

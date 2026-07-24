@@ -224,11 +224,11 @@ export const Icons = {
   accordionNotActive: {
     paths: [
       {
-        d: "m6 9 6 6 6-6",
+        d: "M12 5v14M5 12h14",
       },
     ],
     class:
-      "block h-5 w-5 shrink-0 text-neutral-600 group-hover:text-neutral-500 hs-accordion-active:hidden dark:text-neutral-400",
+      "block h-5 w-5 shrink-0 text-[#EA2295] group-hover:text-[#EA2295] hs-accordion-active:hidden",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
@@ -245,7 +245,7 @@ export const Icons = {
       },
     ],
     class:
-      "hidden h-5 w-5 shrink-0 text-neutral-600 group-hover:text-neutral-500 hs-accordion-active:block dark:text-neutral-400",
+      "hidden h-5 w-5 shrink-0 text-[#EA2295] group-hover:text-[#EA2295] hs-accordion-active:block",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
