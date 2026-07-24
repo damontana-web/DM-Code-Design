@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import "preline/variants.css";
 @import "tailwindcss";
 
 @font-face {
   font-family: 'Plus Jakarta Sans';
-  src: url('/public/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz_wdth_wght.ttf') format('truetype');
+  font-weight: 200 800;
   font-display: swap;
 }
 /* ...existing code... */
