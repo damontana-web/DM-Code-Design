@@ -1,9 +1,11 @@
 ---
-import logo from "@images/DaMontana-Logo.svg";
+import logo from "@images/DaMontana-Logo.png";
 ---
 
 <img
   {...Astro.props}
   src={logo.src}
   alt="DaMontana Logo"
-/> 
+  width={logo.width}
+  height={logo.height}
+/>
