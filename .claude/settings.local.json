@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(echo \"TSC_EXIT:$?\")",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npm i *)",
+      "Bash(node *)",
+      "Bash(npx playwright *)",
+      "Bash(node .ds-sync/package-validate.mjs ./ds-bundle)",
+      "Read(//tmp/**)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
